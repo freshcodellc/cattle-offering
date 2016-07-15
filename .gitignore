@@ -1,0 +1,12 @@
+# Python project files
+*.pyc
+local.py
+__pycache__
+celerybeat.pid
+celerybeat-schedule.db
+
+# Ignore everything under the
+# following directories.
+static
+media
+.cache
