@@ -21,7 +21,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    # Other
+    'compressor',
+
     # Project Apps
+    'cattle'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -84,6 +88,32 @@ USE_L10N = True
 
 USE_TZ = True
 
+STATICFILES_FINDERS = (
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other finders..
+    'compressor.finders.CompressorFinder',
+)
+
+TEMPLATES = [
+    {
+        'BACKEND': 'django.template.backends.django.DjangoTemplates',
+        'DIRS': [],
+        'APP_DIRS': True,
+        'OPTIONS': {
+            'context_processors': [
+                'django.contrib.auth.context_processors.auth',
+                'django.template.context_processors.debug',
+                'django.template.context_processors.i18n',
+                'django.template.context_processors.media',
+                'django.template.context_processors.static',
+                'django.template.context_processors.tz',
+                'django.contrib.messages.context_processors.messages',
+                'django.core.context_processors.request',
+            ],
+        },
+    },
+]
 
 # Static files
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '/static'))
@@ -92,3 +122,8 @@ STATIC_URL = '/static/'
 # Media files
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '/media'))
 MEDIA_URL = '/media/'
+
+# Compressor
+COMPRESS_PRECOMPILERS = (
+    ('text/x-scss', 'django_libsass.SassCompiler'),
+)
