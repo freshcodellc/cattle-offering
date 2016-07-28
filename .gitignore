@@ -7,6 +7,5 @@ celerybeat-schedule.db
 
 # Ignore everything under the
 # following directories.
-static
 media
 .cache
