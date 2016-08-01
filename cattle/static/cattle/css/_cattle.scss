@@ -3,6 +3,7 @@
   padding: 0;
   box-sizing: border-box;
   font-family: 'Verdana';
+  color: $white;
 }
 
 html {
@@ -65,5 +66,33 @@ header {
     &:hover {
       color: $light-tan;
     }
+  }
+}
+
+.hero {
+  background-image: url('../img/cattle-hero.jpg');
+  background-size: cover;
+  width: 100%;
+  height: 418px;
+}
+
+.column {
+  width: 50%;
+  float: left;
+
+  &:first-child {
+    border-right: 2px solid $light-tan;
+  }
+
+  &__header {
+
+  }
+
+  &__title {
+
+  }
+
+  &__content {
+    
   }
 }
