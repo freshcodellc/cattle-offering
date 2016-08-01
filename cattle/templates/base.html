@@ -3,7 +3,28 @@
 {% include "header.html" %}
 
 <body>
+  <main>
+    <header>
+      <nav class="action-menu">
+        <a class="action-menu__link" href="#">Watch List</a>
+        <a class="action-menu__link" href="#">Register</a>
+        <a class="action-menu__link" href="#">Log In</a>
+      </nav>
+      <div class="brand-header">
+        <a href="/">
+          <img class="brand-header__logo" src="{{ STATIC_URL }}cattle/img/cattle-logo.png" alt="Cattle Offering Logo" />
+        </a>
+        <nav class="main-menu">
+          <a class="main-menu__link" href="#">About Us</a>
+          <a class="main-menu__link" href="#">Auctions</a>
+          <a class="main-menu__link" href="#">Offering</a>
+          <a class="main-menu__link" href="#">Newsletter</a>
+          <a class="main-menu__link" href="#">Contact Us</a>
+        </nav>
+      </div>
+    </header>
     {% block content %}{% endblock %}
     {% include "footer.html" %}
+  </main>
 </body>
 </html>

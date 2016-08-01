@@ -1,13 +1,5 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.content {
-  background: blue;
-
-  &>h1 {
-    color: red;
-  }
-}
+// @import '_mixins.scss';
+// @import '_fonts.scss';
+@import '_variables.scss';
+// @import '_animations.scss';
+@import '_cattle.scss';
