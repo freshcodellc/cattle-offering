@@ -30,7 +30,7 @@ header {
     text-decoration: none;
     border-right: 2px solid $light-tan;
     text-transform: uppercase;
-    padding: 0 9px;
+    padding: 0px 10px 0px 4px;
 
     &:hover {
       color: $dark-tan;
@@ -76,23 +76,90 @@ header {
   height: 418px;
 }
 
+.main-content {
+  height: 741px;
+  padding: 30px 0px 30px 0px;
+}
+
 .column {
   width: 50%;
   float: left;
+  padding: 0px 15px 0px 15px;
 
   &:first-child {
-    border-right: 2px solid $light-tan;
+    border-right: 1px solid $light-tan;
   }
 
   &__header {
-
+    border: 1px solid $light-tan;
+    height: 55px;
+    line-height: 55px;
   }
 
   &__title {
-
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 23px;
+    color: $light-tan;
   }
 
   &__content {
-    
+
   }
+
+  &__paragraph {
+    padding-top: 1em;
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
+.email {
+  text-decoration: none;
+  color: $light-tan;
+
+  &:hover {
+    color: $dark-tan;
+    text-decoration: underline;
+  }
+}
+
+.footer {
+  height: 140px;
+  max-width: 980px;
+  background-image: url('../img/footer-bg.jpg');
+  background-size: cover;
+}
+
+.footer-menu {
+  height: 70px;
+  line-height: 70px;
+  max-width: 980px;
+  text-align: center;
+
+  &__link {
+    text-decoration: none;
+    border-right: 2px solid $white;
+    text-transform: uppercase;
+    padding: 0px 10px 0px 4px;
+    font-weight: bold;
+
+    &:hover {
+      color: $light-tan;
+    }
+
+    &:nth-last-child(1) {
+      border-right: none;
+      padding-right: 0px;
+    }
+  }
+}
+
+.footer-info {
+  height: 70px;
+  line-height: 70px;
+  max-width: 980px;
+  text-align: center;
+  font-size: 12px;
+  font-weight: bold;
 }
