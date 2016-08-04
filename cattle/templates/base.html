@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
-{% include "header.html" %}
+<head>
+    <title>{% block title %}Cattle Offering{% endblock %}</title>
+    {% load compress %}
+    {% compress css %}
+      <link rel="stylesheet" type="text/x-scss" href="{{ STATIC_URL }}cattle/css/main.scss" />
+    {% endcompress %}
+</head>
 
 <body>
   <main>
@@ -15,11 +21,10 @@
           <img class="brand-header__logo" src="{{ STATIC_URL }}cattle/img/cattle-logo.png" alt="Cattle Offering Logo" />
         </a>
         <nav class="main-menu">
-          <a class="main-menu__link" href="#">About Us</a>
-          <a class="main-menu__link" href="#">Auctions</a>
-          <a class="main-menu__link" href="#">Offering</a>
-          <a class="main-menu__link" href="#">Newsletter</a>
-          <a class="main-menu__link" href="#">Contact Us</a>
+          <a class="main-menu__link" href="/about">About Us</a>
+          <a class="main-menu__link" href="/offering">Offering</a>
+          <a class="main-menu__link" href="/newsletter">Newsletter</a>
+          <a class="main-menu__link" href="/contact">Contact Us</a>
         </nav>
       </div>
     </header>

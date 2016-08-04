@@ -125,6 +125,15 @@ header {
   max-width: 980px;
   background-image: url('../img/footer-bg.jpg');
   background-size: cover;
+
+  &__copywrite {
+    height: 70px;
+    line-height: 70px;
+    max-width: 980px;
+    text-align: center;
+    font-size: 12px;
+    font-weight: bold;
+  }
 }
 
 .footer-menu {
@@ -149,13 +158,4 @@ header {
       padding-right: 0px;
     }
   }
-}
-
-.footer-info {
-  height: 70px;
-  line-height: 70px;
-  max-width: 980px;
-  text-align: center;
-  font-size: 12px;
-  font-weight: bold;
 }
