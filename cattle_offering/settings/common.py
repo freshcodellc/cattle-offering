@@ -25,6 +25,7 @@ INSTALLED_APPS = [
     'compressor',
 
     # Project Apps
+    'core',
     'cattle'
 ]
 

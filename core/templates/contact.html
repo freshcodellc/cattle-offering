@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% block title %}Contact Us{% endblock %}
+
+{% block content %}
+
+  <div class="main-content main-content--white">
+    <form role="form" action="" method="post">
+      {% csrf_token %}
+      {{ form.as_p }}
+    <button type="submit">Submit</button>
+</form>
+  </div>
+
+{% endblock %}
