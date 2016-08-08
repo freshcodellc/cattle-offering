@@ -6,7 +6,27 @@
   <div class="main-content main-content--white">
     <form role="form" action="" method="post">
       {% csrf_token %}
-      {{ form.as_p }}
+      {{ form.non_field_errors }}
+      <div class="fieldWrapper">
+          {{ form.name.errors }}
+          <label for="{{ form.name.id_for_label }}">Name:</label>
+          {{ form.name }}
+      </div>
+      <div class="fieldWrapper">
+          {{ form.email.errors }}
+          <label for="{{ form.email.id_for_label }}">Email:</label>
+          {{ form.email }}
+      </div>
+      <div class="fieldWrapper">
+          {{ form.subject.errors }}
+          <label for="{{ form.subject.id_for_label }}">Subject:</label>
+          {{ form.subject }}
+      </div>
+      <div class="fieldWrapper">
+          {{ form.message.errors }}
+          <label for="{{ form.message.id_for_label }}">Message</label>
+          {{ form.message }}
+      </div>
     <button type="submit">Submit</button>
 </form>
   </div>
