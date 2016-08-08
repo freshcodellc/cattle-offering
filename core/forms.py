@@ -1,10 +1,10 @@
 from django import forms
 
 class ContactForm(forms.Form):
-    name = forms.CharField()
-    email = forms.EmailField()
-    subject = forms.CharField()
-    message = forms.CharField(widget=forms.Textarea)
+    name = forms.CharField(widget=forms.TextInput(attrs={'class': 'contact-form__name'}))
+    email = forms.EmailField(widget=forms.TextInput(attrs={'class': 'contact-form__email'}))
+    subject = forms.CharField(widget=forms.TextInput(attrs={'class': 'contact-form__subject'}))
+    message = forms.CharField(widget=forms.Textarea(attrs={'class': 'contact-form__message'}))
 
     def send_email(self):
         # send email using the self.cleaned_data dictionary
