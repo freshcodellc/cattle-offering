@@ -1,10 +1,8 @@
 <div class="footer">
   <div class="footer-menu">
-    <a class="footer-menu__link" href="#" >About Us</a>
-    <a class="footer-menu__link" href="#" >Offering</a>
-    <a class="footer-menu__link" href="#" >Browse By</a>
-    <a class="footer-menu__link" href="#" >Blog</a>
-    <a class="footer-menu__link" href="#" >Contact Us</a>
+    <a class="footer-menu__link" href="{% url 'core:about' %}" >About Us</a>
+    <a class="footer-menu__link" href="{% url 'core:offering' %}" >Offering</a>
+    <a class="footer-menu__link" href="{% url 'core:contact' %}" >Contact Us</a>
   </div>
   <div class="footer__copywrite">
     <p class="footer__text">© 2015 Cattle Offering, All Rights Reserved.</p>

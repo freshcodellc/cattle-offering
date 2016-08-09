@@ -13,6 +13,10 @@ ALLOWED_HOSTS = []
 
 # Applications
 INSTALLED_APPS = [
+    # Project Apps
+    'core',
+    'cattle',
+    'user',
     # Core Django Functionality
     'django.contrib.admin',
     'django.contrib.auth',
@@ -25,10 +29,6 @@ INSTALLED_APPS = [
     'compressor',
     'localflavor',
 
-    # Project Apps
-    'core',
-    'cattle',
-    'user'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -84,6 +84,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'user.User'
+LOGIN_REDIRECT_URL = '/account/profile/'
+LOGIN_URL = '/account/login/'
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'

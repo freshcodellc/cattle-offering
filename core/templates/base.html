@@ -18,18 +18,16 @@
       <nav class="action-menu">
         <a class="action-menu__link" href="#">Watch List</a>
         <a class="action-menu__link" href="#">Register</a>
-        <a class="action-menu__link" href="#">Log In</a>
+        <a class="action-menu__link" href="{% url 'login' %}">Log In</a>
       </nav>
       <div class="brand-header">
-        <a href="/">
+        <a href="{% url 'core:index' %}">
           <img class="brand-header__logo" src="{{ STATIC_URL }}cattle/img/cattle-logo.png" alt="Cattle Offering Logo" />
         </a>
         <div class="mobile-menu-button">
           <svg class="mobile-menu-button__svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/" version="1.1" x="0" y="0" width="31.6" height="22.6" viewBox="0 0 31.6 22.6" xml:space="preserve" enable-background="new 0 0 31.6 22.6">
             <style type="text/css">
-
-            .menu-line{fill:#FFFFFF;}
-
+              .menu-line{fill:#FFFFFF;}
             </style>
             <rect y="0" class="menu-line" width="31.6" height="4.7"/>
             <rect y="8.9" class="menu-line" width="31.6" height="4.7"/>
@@ -37,9 +35,9 @@
           </svg>
         </div>
         <nav class="main-menu">
-          <a class="main-menu__link" href="/about">About Us</a>
-          <a class="main-menu__link" href="/offering">Offering</a>
-          <a class="main-menu__link" href="/contact">Contact Us</a>
+          <a class="main-menu__link" href="{% url 'core:about' %}">About Us</a>
+          <a class="main-menu__link" href="{% url 'core:offering' %}">Offering</a>
+          <a class="main-menu__link" href="{% url 'core:contact' %}">Contact Us</a>
         </nav>
       </div>
     </header>
