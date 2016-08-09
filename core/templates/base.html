@@ -16,9 +16,14 @@
   <main>
     <header>
       <nav class="action-menu">
-        <a class="action-menu__link" href="#">Watch List</a>
-        <a class="action-menu__link" href="#">Register</a>
-        <a class="action-menu__link" href="{% url 'login' %}">Log In</a>
+        {% if not request.user or request.user.is_anonymous %}
+          <a class="action-menu__link" href="{% url 'signup' %}">Register</a>
+          <a class="action-menu__link" href="{% url 'login' %}">Log In</a>
+        {% else %}
+          <a class="action-menu__link" href="#">Watch List</a>
+          <a class="action-menu__link" href="{% url 'signup' %}">Register</a>
+          <a class="action-menu__link" href="{% url 'logout' %}">Log Out</a>
+        {% endif %}
       </nav>
       <div class="brand-header">
         <a href="{% url 'core:index' %}">
