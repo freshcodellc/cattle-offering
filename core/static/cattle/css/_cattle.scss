@@ -153,6 +153,82 @@ header {
   }
 }
 
+.fieldWrapper {
+  height: 35px;
+  line-height: 310px;
+
+  &:nth-child(5) {
+    height: 205px;
+    margin-bottom: 10px;
+  }
+
+  &:nth-last-child(1){
+    height: 50px;
+    line-height:50px;
+    width: 75%;
+  }
+}
+
+.contact-form {
+  padding-top: 20px;
+
+  &__label {
+    width: 25%;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+  }
+
+  &__name {
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &__email {
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &__subject {
+    width: 50%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    display: block;
+  }
+
+  &__message {
+    width: 50%;
+    height: 200px;
+    line-height: 25px;
+    display: block;
+    padding: 5px;
+  }
+}
+
+.button {
+  height: 45px;
+  width: 90px;
+  color: $white;
+  font-size: 18px;
+  background-color: $dark-tan;
+  border: none;
+  border-radius: 3px;
+  float: right;
+
+  &:hover {
+    background-color: $light-tan;
+    cursor: pointer;
+  }
+}
+
 .column {
   width: 50%;
   float: left;

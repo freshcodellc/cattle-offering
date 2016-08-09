@@ -4,31 +4,34 @@
 {% block content %}
 
   <div class="main-content main-content--white">
-    <form role="form" action="" method="post">
+    <h1 class="main-content__title">Contact Us</h1>
+    <form class="contact-form" role="form" action="" method="post">
       {% csrf_token %}
       {{ form.non_field_errors }}
       <div class="fieldWrapper">
-          {{ form.name.errors }}
-          <label for="{{ form.name.id_for_label }}">Name:</label>
-          {{ form.name }}
+        {{ form.name.errors }}
+        <label class="contact-form__label" for="{{ form.name.id_for_label }}">Name:</label>
+        {{ form.name }}
       </div>
       <div class="fieldWrapper">
-          {{ form.email.errors }}
-          <label for="{{ form.email.id_for_label }}">Email:</label>
-          {{ form.email }}
+        {{ form.email.errors }}
+        <label class="contact-form__label" for="{{ form.email.id_for_label }}">Email:</label>
+        {{ form.email }}
       </div>
       <div class="fieldWrapper">
-          {{ form.subject.errors }}
-          <label for="{{ form.subject.id_for_label }}">Subject:</label>
-          {{ form.subject }}
+        {{ form.subject.errors }}
+        <label class="contact-form__label" for="{{ form.subject.id_for_label }}">Subject:</label>
+        {{ form.subject }}
       </div>
       <div class="fieldWrapper">
-          {{ form.message.errors }}
-          <label for="{{ form.message.id_for_label }}">Message</label>
-          {{ form.message }}
+        {{ form.message.errors }}
+        <label class="contact-form__label"  for="{{ form.message.id_for_label }}">Message:</label>
+        {{ form.message }}
       </div>
-    <button type="submit">Submit</button>
-</form>
+      <div class="fieldWrapper">
+        <button class="button" type="submit">Submit</button>
+      </div>
+    </form>
   </div>
 
 {% endblock %}
