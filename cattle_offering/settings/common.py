@@ -13,10 +13,6 @@ ALLOWED_HOSTS = []
 
 # Applications
 INSTALLED_APPS = [
-    # Project Apps
-    'core',
-    'cattle',
-    'user',
     # Core Django Functionality
     'django.contrib.admin',
     'django.contrib.auth',
@@ -29,6 +25,10 @@ INSTALLED_APPS = [
     'compressor',
     'localflavor',
 
+    # Project Apps
+    'core',
+    'cattle',
+    'user',
 ]
 
 MIDDLEWARE_CLASSES = [
