@@ -6,7 +6,7 @@ services:
       - dbdata:/var/lib/postgresql/data
   web:
     build: .
-    command: bash -c "python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
+    command: bash -c "pip install -r misc/requirements.txt && python manage.py migrate && python manage.py runserver 0.0.0.0:8000"
     volumes:
       - .:/code
     ports:

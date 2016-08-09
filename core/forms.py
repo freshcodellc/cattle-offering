@@ -7,5 +7,5 @@ class ContactForm(forms.Form):
     message = forms.CharField(widget=forms.Textarea(attrs={'class': 'contact-form__message'}))
 
     def send_email(self):
-        # send email using the self.cleaned_data dictionary
+        # TODO: send email using the self.cleaned_data dictionary
         pass

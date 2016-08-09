@@ -23,10 +23,12 @@ INSTALLED_APPS = [
 
     # Other
     'compressor',
+    'localflavor',
 
     # Project Apps
     'core',
-    'cattle'
+    'cattle',
+    'user'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -81,6 +83,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
+AUTH_USER_MODEL = 'user.User'
 
 # Internationalization
 LANGUAGE_CODE = 'en-us'
