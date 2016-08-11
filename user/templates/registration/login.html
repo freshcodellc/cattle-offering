@@ -18,12 +18,12 @@
 
 <div class="main-content main-content--white">
   <h1 class="main-content__title">Log In</h1>
-  <form class="login" action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
-    <div class="form-row">
+  <form class="form-login" action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+    <div class="form-login__row">
       {{ form.username.errors }}
       {{ form.username.label_tag }} {{ form.username }}
     </div>
-    <div class="form-row">
+    <div class="form-login__row">
       {{ form.password.errors }}
       {{ form.password.label_tag }} {{ form.password }}
       <input type="hidden" name="next" value="{{ next }}" />

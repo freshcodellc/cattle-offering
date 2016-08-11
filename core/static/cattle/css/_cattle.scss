@@ -237,33 +237,32 @@ header {
   }
 }
 
-.login {
+.form-login {
   padding-top: 20px;
-}
 
-.form-row {
-  height: 35px;
-  line-height: 35px;
+  &__row {
+    height: 35px;
+    line-height: 35px;
 
-  & label {
-    width: 15%;
-    display: inline-block;
-    height: 25px;
-    line-height: 25px;
-    float: left;
+    & label {
+      width: 15%;
+      display: inline-block;
+      height: 25px;
+      line-height: 25px;
+      float: left;
+    }
+
+    & input {
+      width: 30%;
+      height: 25px;
+      line-height: 25px;
+      margin-bottom: 10px;
+      display: block;
+      border: 1px solid $gray;
+      border-radius: 2px;
+    }
   }
-
-  & input {
-    width: 30%;
-    height: 25px;
-    line-height: 25px;
-    margin-bottom: 10px;
-    display: block;
-    border: 1px solid $gray;
-    border-radius: 2px;
-  }
 }
-
 
 .password-reset {
   width: 30%;
@@ -307,6 +306,45 @@ header {
   margin-left: 15%;
   height: 35px;
   line-height: 35%;
+}
+
+.form-signup {
+  padding-top: 20px;
+
+  &__wrapper {
+    height: 35px;
+    line-height: 35px;
+
+    &:nth-last-child(1) {
+      width: 55%;
+    }
+  }
+
+  &__label {
+    width: 20%;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+  }
+
+  &__last {
+    width: 27%;
+    display: block;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+  }
+
+  & input {
+    width: 35%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid $gray;
+    border-radius: 2px;
+  }
 }
 
 .column {
