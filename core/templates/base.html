@@ -17,11 +17,11 @@
     <header>
       <nav class="action-menu">
         {% if not request.user or request.user.is_anonymous %}
-          <a class="action-menu__link" href="{% url 'signup' %}">Register</a>
+          <a class="action-menu__link" href="{% url 'register' %}">Register</a>
           <a class="action-menu__link" href="{% url 'login' %}">Log In</a>
         {% else %}
-          <a class="action-menu__link" href="#">Watch List</a>
-          <a class="action-menu__link" href="{% url 'signup' %}">Register</a>
+          <a class="action-menu__link" href="{% url 'watchlist' %}">Watch List</a>
+          <a class="action-menu__link" href="{% url 'register' %}">Register</a>
           <a class="action-menu__link" href="{% url 'logout' %}">Log Out</a>
         {% endif %}
       </nav>
@@ -41,7 +41,7 @@
         </div>
         <nav class="main-menu">
           <a class="main-menu__link" href="{% url 'core:about' %}">About Us</a>
-          <a class="main-menu__link" href="{% url 'core:offering' %}">Offering</a>
+          <a class="main-menu__link" href="{% url 'cattle:offering' %}">Offering</a>
           <a class="main-menu__link" href="{% url 'core:contact' %}">Contact Us</a>
         </nav>
       </div>

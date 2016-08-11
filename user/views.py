@@ -1,12 +1,14 @@
-from django.contrib.auth import authenticate, login
+from django.contrib.auth import authenticate, login, get_user_model
 from django.shortcuts import render, redirect
+from django.views.generic import ListView
 from django.views.generic.edit import CreateView
 
 from .models import User
+from cattle.models import Cattle
 
 
-class Signup(CreateView):
-    model = User
+class RegistrationView(CreateView):
+    model = get_user_model()
     fields = ['first_name', 'last_name', 'email', 'password', 'newsletter']
     template_name = 'registration/signup.html'
     success_url = '/thanks/'
@@ -19,3 +21,11 @@ class Signup(CreateView):
         user = authenticate(username=user.email, password=form.cleaned_data['password'])
         login(self.request, user)
         return super().form_valid(form)
+
+
+class WatchListView(ListView):
+    model = Cattle
+    template_name = 'user/watch_list.html'
+
+    def get_queryset(self):
+        return self.request.user.watch_list.all()

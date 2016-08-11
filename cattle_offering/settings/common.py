@@ -17,7 +17,7 @@ INSTALLED_APPS = [
     'core',
     'cattle',
     'user',
-    
+
     # Core Django Functionality
     'django.contrib.admin',
     'django.contrib.auth',
@@ -85,7 +85,7 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 AUTH_USER_MODEL = 'user.User'
-LOGIN_REDIRECT_URL = '/account/profile/'
+LOGIN_REDIRECT_URL = '/account/watchlist/'
 LOGIN_URL = '/account/login/'
 
 # Internationalization

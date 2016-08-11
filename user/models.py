@@ -5,6 +5,8 @@ from django.db import models
 
 from localflavor.us.models import PhoneNumberField, USStateField, USZipCodeField
 
+from cattle.models import Cattle
+
 
 class UserManager(BaseUserManager):
     def create_user(self, email, password=None):
@@ -62,6 +64,7 @@ class User(AbstractBaseUser, PermissionsMixin):
     type = models.CharField(max_length=15, choices=USER_TYPES)
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    watch_list = models.ManyToManyField(Cattle, related_name='watchers')
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 

@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}Offering{% endblock %}
+
+{% block content %}
+  <div class="main-content main-content--white">
+    <h1 class="main-content__title">Offering</h1>
+    {% for cattle in object_list %}
+      <h2>{{ cattle.bull_name }}</h2>
+    {% empty %}
+      <p>No cattle currently in the system.</p>
+    {% endfor %}
+  </div>
+{% endblock %}
