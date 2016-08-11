@@ -155,10 +155,10 @@ header {
 
 .fieldWrapper {
   height: 35px;
-  line-height: 310px;
+  line-height: 35px;
 
   &:nth-child(5) {
-    height: 205px;
+    height: 200px;
     margin-bottom: 10px;
   }
 
@@ -186,6 +186,8 @@ header {
     line-height: 25px;
     margin-bottom: 10px;
     display: block;
+    border: 1px solid $gray;
+    border-radius: 2px;
   }
 
   &__email {
@@ -194,6 +196,8 @@ header {
     line-height: 25px;
     margin-bottom: 10px;
     display: block;
+    border: 1px solid $gray;
+    border-radius: 2px;
   }
 
   &__subject {
@@ -202,6 +206,8 @@ header {
     line-height: 25px;
     margin-bottom: 10px;
     display: block;
+    border: 1px solid $gray;
+    border-radius: 2px;
   }
 
   &__message {
@@ -210,14 +216,16 @@ header {
     line-height: 25px;
     display: block;
     padding: 5px;
+    border: 1px solid $gray;
+    border-radius: 2px;
   }
 }
 
 .button {
-  height: 45px;
-  width: 90px;
+  height: 35px;
+  width: 70px;
   color: $white;
-  font-size: 18px;
+  font-size: 15px;
   background-color: $dark-tan;
   border: none;
   border-radius: 3px;
@@ -227,6 +235,78 @@ header {
     background-color: $light-tan;
     cursor: pointer;
   }
+}
+
+.login {
+  padding-top: 20px;
+}
+
+.form-row {
+  height: 35px;
+  line-height: 35px;
+
+  & label {
+    width: 15%;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    float: left;
+  }
+
+  & input {
+    width: 30%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    display: block;
+    border: 1px solid $gray;
+    border-radius: 2px;
+  }
+}
+
+
+.password-reset {
+  width: 30%;
+  margin-left: 15%;
+  height: 30px;
+  margin-bottom: 10px;
+
+  &__link {
+    text-decoration: none;
+    width: 50%;
+    margin: 0px 0px 0px 0px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    display: block;
+    color: $dark-tan;
+
+    &:hover {
+      color: $light-tan;
+    }
+  }
+
+  &__register {
+    text-decoration: none;
+    width: 50%;
+    margin: 5px 0px 0px 0px;
+    font-size: 12px;
+    height: 12px;
+    line-height: 12px;
+    display: block;
+    color: $dark-tan;
+
+    &:hover {
+      color: $light-tan;
+    }
+  }
+}
+
+.submit-row {
+  width: 30%;
+  margin-left: 15%;
+  height: 35px;
+  line-height: 35%;
 }
 
 .column {
