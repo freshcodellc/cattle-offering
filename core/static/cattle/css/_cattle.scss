@@ -409,6 +409,15 @@ header {
   }
 }
 
+.password-reset-done {
+
+  &__paragraph{
+    padding-top: 1em;
+    font-size: 17px;
+    line-height: 25px;
+  }
+}
+
 .column {
   width: 50%;
   float: left;
