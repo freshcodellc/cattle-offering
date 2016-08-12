@@ -235,6 +235,22 @@ header {
     background-color: $light-tan;
     cursor: pointer;
   }
+
+  &__reset {
+    height: 25px;
+    width: 35%;
+    color: $white;
+    font-size: 15px;
+    background-color: $dark-tan;
+    border: none;
+    border-radius: 3px;
+    float: right;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
 }
 
 .form-login {
@@ -312,12 +328,16 @@ header {
   padding-top: 20px;
 
   &__wrapper {
-    height: 35px;
     line-height: 35px;
 
     &:nth-last-child(1) {
       width: 55%;
     }
+  }
+
+  &__error {
+    display: block;
+    float: left;
   }
 
   &__label {
@@ -342,6 +362,48 @@ header {
     line-height: 25px;
     margin-bottom: 10px;
     display: block;
+    border: 1px solid $gray;
+    border-radius: 2px;
+  }
+}
+
+.errorlist li {
+  padding-left: 20%;
+  display: block;
+  height: 25px;
+  line-height: 25px;
+  color: red;
+  text-decoration: none;
+}
+
+.form-password-reset {
+  padding-top: 20px;
+
+  &__label {
+    width: 20%;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+  }
+
+  &__wrapper {
+    height: 35px;
+    line-height: 35px;
+    margin-top: 10px;
+
+    &:nth-last-child(1) {
+      height: 35px;
+      line-height: 35px;
+      margin-top: 10px;
+      width: 45%;
+    }
+  }
+
+  & input {
+    width: 25%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
     border: 1px solid $gray;
     border-radius: 2px;
   }

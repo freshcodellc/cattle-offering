@@ -2,7 +2,7 @@
 {% load addclass %}
 
 {% block content %}
-  <div class="main-content main-content--white">
+  <div class="main-content main-content--white clear">
     <h1 class="main-content__title">Sign Up</h1>
     {% if form.errors %}
       {% for field in form.errors %}
@@ -11,27 +11,27 @@
     <form class="form-signup" method="post" action="{% url 'register' %}">
       {% csrf_token %}
       <div class="form-signup__wrapper">
-        <p>{{ form.first_name.errors }}</p>
+        <p class="form-signup__error">{{ form.first_name.errors }}</p>
         <label class="form-signup__label" for="id_first_name">First name:</label>
         {{ form.first_name|addclass:'signup__first-name' }}
       </div>
       <div class="form-signup__wrapper">
-        <p>{{ form.last_name.errors }}</p>
+        <p class="form-signup__error">{{ form.last_name.errors }}</p>
         <label class="form-signup__label" for="id_last_name">Last name:</label>
         {{ form.last_name|addclass:'signup__last-name' }}
       </div>
       <div class="form-signup__wrapper">
-        <p>{{ form.email.errors }}</p>
+        <p class="form-signup__error">{{ form.email.errors }}</p>
         <label class="form-signup__label" for="id_email">Email address:</label>
         {{ form.email|addclass:'signup__email' }}
       </div>
       <div class="form-signup__wrapper">
-        <p>{{ form.password.errors }}</p>
+        <p class="form-signup__error">{{ form.password.errors }}</p>
         <label class="form-signup__label" for="id_password">Password:</label>
         {{ form.password|addclass:'signup__password' }}
       </div>
       <div class="form-signup__wrapper">
-        <p>{{ form.newsletter.errors }}</p>
+        <p class="form-signup__error">{{ form.newsletter.errors }}</p>
         <label class="form-signup__last" for="id_newsletter">Keep me up to date via email!</label>
         {{ form.newsletter|addclass:'signup__newsletter' }}
       </div>
