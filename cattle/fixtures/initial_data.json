@@ -1,0 +1,62 @@
+[
+{
+  "model": "cattle.cattle",
+  "pk": 1,
+  "fields": {
+    "producer": 1,
+    "lot_number": 1234,
+    "breed": "angus",
+    "sex": "f",
+    "female_type": "cow",
+    "registration_number": "12345",
+    "bull_name": "Test Angus Female",
+    "sire": "Test Sire",
+    "dame": "Test Dame",
+    "scrotal_circumference": "0.00",
+    "birth_weight": "0.99",
+    "weaning_weight": 1,
+    "yearling_weight": 1,
+    "residual_average_daily_gain": "0.99",
+    "heifer_pregnancy": "0.5",
+    "calving_ease_maternal": 1,
+    "maternal_milk": 1,
+    "mature_weight": 1,
+    "mature_height": "0.8",
+    "cow_energy_value": "-0.03",
+    "carcass_weight": 1,
+    "marbling": "0.06",
+    "ribeye_area": "-0.08",
+    "fat_thickness": "0.034"
+  }
+},
+{
+  "model": "cattle.cattle",
+  "pk": 2,
+  "fields": {
+    "producer": 1,
+    "lot_number": 123456,
+    "breed": "charolais",
+    "sex": "b",
+    "female_type": null,
+    "registration_number": "121212",
+    "bull_name": "Test Charolais Bull",
+    "sire": "Test Sire",
+    "dame": "Test Dame",
+    "scrotal_circumference": "0.06",
+    "birth_weight": "0.05",
+    "weaning_weight": 2,
+    "yearling_weight": 2,
+    "residual_average_daily_gain": "-0.05",
+    "heifer_pregnancy": "0.5",
+    "calving_ease_maternal": 2,
+    "maternal_milk": 2,
+    "mature_weight": 2,
+    "mature_height": "0.4",
+    "cow_energy_value": "-0.03",
+    "carcass_weight": 2,
+    "marbling": "0.05",
+    "ribeye_area": "0.11",
+    "fat_thickness": "0.113"
+  }
+}
+]
