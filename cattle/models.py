@@ -1,6 +1,7 @@
 from django.conf import settings
 from django.db import models
 
+
 class Cattle(models.Model):
     # Breed Values
     ANGUS = 'angus'
@@ -30,8 +31,8 @@ class Cattle(models.Model):
     )
 
     # Sex Values
-    BULL = 'b'
-    FEMALE = 'f'
+    BULL = 'bull'
+    FEMALE = 'female'
 
     SEXES = (
         (BULL, 'Bull'),

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Cattle Importer{% endblock %}
+
+{% block content %}
+  <div class="main-content main-content--white">
+    <h1 class="main-content__title">Cattle Importer</h1>
+
+      {{ form_with_error.non_field_errors }}
+      {% for field in form_with_error %}
+        {% if field.errors %}
+        <ul class="errorlist">
+          {% for error in field.errors %}
+            <li>
+            {{ field.label }}: {{ error }}
+            </li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      {% endfor %}
+  
+      <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.cattle_xlsx.errors }}
+        <label for="{{ form.cattle_xlsx.id_for_label }}">Cattle Excel Spreadshet (.xlsx):</label>
+        {{ form.cattle_xlsx }}
+        <input type="submit" name="Submit">
+      </form>
+  </div>
+{% endblock %}
