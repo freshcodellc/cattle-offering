@@ -3,32 +3,32 @@
 
 {% block content %}
 
-  <div class="main-content main-content--white">
+  <div class="main-content main-content--white clear">
     <h1 class="main-content__title">Contact Us</h1>
     <form class="contact-form" role="form" action="" method="post">
       {% csrf_token %}
       {{ form.non_field_errors }}
-      <div class="fieldWrapper">
-        {{ form.name.errors }}
+      {{ form.name.errors }}
+      <div class="contact-form__row">
         <label class="contact-form__label" for="{{ form.name.id_for_label }}">Name:</label>
         {{ form.name }}
       </div>
-      <div class="fieldWrapper">
-        {{ form.email.errors }}
+      {{ form.email.errors }}
+      <div class="contact-form__row">
         <label class="contact-form__label" for="{{ form.email.id_for_label }}">Email:</label>
         {{ form.email }}
       </div>
-      <div class="fieldWrapper">
-        {{ form.subject.errors }}
+      {{ form.subject.errors }}
+      <div class="contact-form__row">
         <label class="contact-form__label" for="{{ form.subject.id_for_label }}">Subject:</label>
         {{ form.subject }}
       </div>
-      <div class="fieldWrapper">
-        {{ form.message.errors }}
+      {{ form.message.errors }}
+      <div class="contact-form__msg">
         <label class="contact-form__label"  for="{{ form.message.id_for_label }}">Message:</label>
         {{ form.message }}
       </div>
-      <div class="fieldWrapper">
+      <div class="contact-form__submit">
         <button class="button__contact" type="submit">Submit</button>
       </div>
     </form>

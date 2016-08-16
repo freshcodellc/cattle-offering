@@ -153,35 +153,36 @@ header {
   }
 }
 
-.fieldWrapper {
-  height: 35px;
-  line-height: 35px;
+.contact-form {
+  padding-top: 20px;
 
-  &:nth-child(5) {
+  &__row {
+    height: 35px;
+    line-height: 35px;
+
+  }
+
+  &__msg {
     height: 200px;
     margin-bottom: 10px;
   }
 
-  &:nth-last-child(1){
+  &__submit {
     height: 50px;
-    line-height:50px;
-    width: 75%;
+    line-height: 50px;
+    width: 70%;
   }
-}
-
-.contact-form {
-  padding-top: 20px;
 
   &__label {
-    width: 25%;
-    display: inline-block;
+    width: 30%;
+    display: block;
     height: 25px;
     line-height: 25px;
     float: left;
   }
 
   &__name {
-    width: 50%;
+    width: 40%;
     height: 25px;
     line-height: 25px;
     margin-bottom: 10px;
@@ -191,7 +192,7 @@ header {
   }
 
   &__email {
-    width: 50%;
+    width: 40%;
     height: 25px;
     line-height: 25px;
     margin-bottom: 10px;
@@ -201,7 +202,7 @@ header {
   }
 
   &__subject {
-    width: 50%;
+    width: 40%;
     height: 25px;
     line-height: 25px;
     margin-bottom: 10px;
@@ -211,7 +212,7 @@ header {
   }
 
   &__message {
-    width: 50%;
+    width: 40%;
     height: 200px;
     line-height: 25px;
     display: block;
@@ -280,6 +281,17 @@ header {
       cursor: pointer;
     }
   }
+
+  &__change {
+    @extend .button;
+    height: 25px;
+    width: 185px;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
 }
 
 .form-login {
@@ -290,7 +302,7 @@ header {
     line-height: 35px;
 
     & label {
-      width: 15%;
+      width: 30%;
       display: inline-block;
       height: 25px;
       line-height: 25px;
@@ -309,9 +321,9 @@ header {
   }
 }
 
-.password-reset {
+.form-login-password-reset {
   width: 30%;
-  margin-left: 15%;
+  margin-left: 30%;
   height: 30px;
   margin-bottom: 10px;
 
@@ -348,7 +360,7 @@ header {
 
 .submit-row {
   width: 30%;
-  margin-left: 15%;
+  margin-left: 30%;
   height: 35px;
   line-height: 35%;
 }
@@ -360,17 +372,19 @@ header {
     line-height: 35px;
 
     &:nth-last-child(1) {
-      width: 55%;
+      width: 65%;
     }
   }
 
   &__error {
+    height: 25px;
+    line-height: 25px;
     display: block;
     float: left;
   }
 
   &__label {
-    width: 20%;
+    width: 30%;
     display: block;
     height: 25px;
     line-height: 25px;
@@ -378,7 +392,7 @@ header {
   }
 
   &__last {
-    width: 27%;
+    width: 25%;
     display: block;
     height: 25px;
     line-height: 25px;
@@ -397,34 +411,39 @@ header {
 }
 
 .errorlist li {
-  padding-left: 20%;
-  display: block;
   height: 25px;
   line-height: 25px;
   color: red;
   text-decoration: none;
+  display: block;
+  padding-left: 30%;
 }
 
 .form-password-reset {
   padding-top: 20px;
 
+  &__instructions {
+    padding-bottom: 10px;
+  }
+
   &__label {
-    width: 20%;
-    height: 35px;
-    line-height: 35px;
+    width: 30%;
+    display: block;
+    height: 25px;
+    line-height: 25px;
     float: left;
   }
 
   &__wrapper {
+    margin-top: 10px;
     height: 35px;
     line-height: 35px;
-    margin-top: 10px;
 
     &:nth-last-child(1) {
       height: 35px;
       line-height: 35px;
       margin-top: 10px;
-      width: 45%;
+      width: 55%;
     }
   }
 
@@ -435,6 +454,7 @@ header {
     margin-bottom: 10px;
     border: 1px solid $gray;
     border-radius: 2px;
+    display: block;
   }
 }
 
@@ -485,6 +505,80 @@ header {
     margin-bottom: 10px;
     border: 1px solid $gray;
     border-radius: 2px;
+  }
+}
+
+.password-reset-complete {
+
+  &__message {
+    margin-top: 20px;
+  }
+
+  &__login {
+    text-decoration: none;
+    color: $dark-tan;
+
+    &:hover {
+      color: $light-tan;
+      cursor: pointer;
+    }
+  }
+}
+
+.form-password-change {
+  padding-top: 20px;
+
+  &__errornote {
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 10px;
+    color: red;
+  }
+
+  &__instructions {
+    height: 35px;
+    display: block;
+    margin-bottom: 20px;
+  }
+
+  &__row {
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 10px;
+
+    & label {
+      @extend .form-password-change__row;
+      width: 30%;
+      float: left;
+    }
+
+    & input {
+      height: 25px;
+      line-height: 25px;
+      width: 25%;
+      margin-bottom: 10px;
+      border: 1px solid $gray;
+      border-radius: 2px;
+    }
+  }
+
+  &__error {
+    height: 25px;
+    line-height: 25px;
+    float: left;
+  }
+
+  &__submit {
+    @extend .form-password-change__row;
+    width: 55%;
+    padding-top: 7px;
+  }
+}
+
+.password-change-done {
+
+  &__message {
+    margin-top: 20px;
   }
 }
 

@@ -19,20 +19,20 @@
 <div class="main-content main-content--white">
   <h1 class="main-content__title">Log In</h1>
   <form class="form-login" action="{{ app_path }}" method="post" id="login-form">{% csrf_token %}
+    {{ form.username.errors }}
     <div class="form-login__row">
-      {{ form.username.errors }}
       {{ form.username.label_tag }} {{ form.username }}
     </div>
+    {{ form.password.errors }}
     <div class="form-login__row">
-      {{ form.password.errors }}
       {{ form.password.label_tag }} {{ form.password }}
       <input type="hidden" name="next" value="{{ next }}" />
     </div>
     {% url 'password_reset' as password_reset_url %}
     {% if password_reset_url %}
-    <div class="password-reset">
-      <a class="password-reset__link" href="{{ password_reset_url }}">{% trans 'Forgot password?' %}</a>
-      <a class="password-reset__register" href="{% url 'register' %}">Not a member?</a>
+    <div class="form-login-password-reset">
+      <a class="form-login-password-reset__link" href="{{ password_reset_url }}">{% trans 'Forgot password?' %}</a>
+      <a class="form-login-password-reset__register" href="{% url 'register' %}">Not a member?</a>
     </div>
     {% endif %}
     <div class="submit-row">
