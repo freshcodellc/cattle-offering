@@ -98,18 +98,18 @@ header {
 .mobile-menu-button {
   display: none;
 
-    @include tablet {
-      display: block;
-      float: right;
-      line-height: 65px;
-    }
-
-    &__svg {
-      height: 65px;
-      line-height: 65px;
-      margin-right: 20px;
-    }
+  @include tablet {
+    display: block;
+    float: right;
+    line-height: 65px;
   }
+
+  &__svg {
+    height: 65px;
+    line-height: 65px;
+    margin-right: 20px;
+  }
+}
 
 .hero {
   position: relative;
