@@ -96,7 +96,7 @@ header {
 }
 
 .mobile-menu-button {
-    display: none;
+  display: none;
 
     @include tablet {
       display: block;
@@ -222,8 +222,6 @@ header {
 }
 
 .button {
-  height: 35px;
-  width: 70px;
   color: $white;
   font-size: 15px;
   background-color: $dark-tan;
@@ -231,20 +229,51 @@ header {
   border-radius: 3px;
   float: right;
 
-  &:hover {
-    background-color: $light-tan;
-    cursor: pointer;
+  &__contact {
+    @extend .button;
+    height: 35px;
+    width: 70px;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
   }
 
   &__reset {
+    @extend .button;
     height: 25px;
     width: 35%;
-    color: $white;
-    font-size: 15px;
-    background-color: $dark-tan;
-    border: none;
-    border-radius: 3px;
-    float: right;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__signup {
+    @extend .button__contact;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__confirm {
+    @extend .button;
+    height: 25px;
+    width: 42%;
+    margin-top: 5px;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__login {
+    @extend .button__contact;
 
     &:hover {
       background-color: $light-tan;
@@ -411,10 +440,51 @@ header {
 
 .password-reset-done {
 
-  &__paragraph{
+  &__paragraph {
     padding-top: 1em;
     font-size: 17px;
     line-height: 25px;
+  }
+}
+
+.password-reset-confirm {
+
+  &__instructions {
+    margin: 20px 0px 20px 0px;
+  }
+
+  &__invalid {
+    height: 35px;
+    line-height: 35px;
+  }
+}
+
+.form-password-reset-confirm {
+
+  &__wrapper {
+    height: 35px;
+    line-height: 35px;
+    margin-bottom: 10px;
+
+    &:nth-last-child(1) {
+      width: 45%;
+    }
+  }
+
+  &__label {
+    width: 20%;
+    height: 35px;
+    line-height: 35px;
+    float: left;
+  }
+
+  & input {
+    width: 25%;
+    height: 25px;
+    line-height: 25px;
+    margin-bottom: 10px;
+    border: 1px solid $gray;
+    border-radius: 2px;
   }
 }
 

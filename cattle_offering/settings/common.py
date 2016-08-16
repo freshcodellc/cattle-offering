@@ -88,6 +88,9 @@ AUTH_USER_MODEL = 'user.User'
 LOGIN_REDIRECT_URL = '/account/watchlist/'
 LOGIN_URL = '/account/login/'
 
+# Email BACKEND
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
 # Internationalization
 LANGUAGE_CODE = 'en-us'
 
