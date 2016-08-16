@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     # Other
     'compressor',
     'localflavor',
-
+    'django_extensions'
 ]
 
 MIDDLEWARE_CLASSES = [
