@@ -321,13 +321,13 @@ header {
   }
 }
 
-.form-login-password-reset {
+.form-login-link {
   width: 30%;
   margin-left: 30%;
   height: 30px;
   margin-bottom: 10px;
 
-  &__link {
+  &__pwd-reset {
     text-decoration: none;
     width: 50%;
     margin: 0px 0px 0px 0px;
@@ -581,6 +581,38 @@ header {
     margin-top: 20px;
   }
 }
+
+.offering-content {
+  @extend .main-content;
+  @extend .main-content--white;
+  width: 72%;
+  border-radius: 4px;
+  float: left;
+
+  &__message {
+    margin-top: 20px;
+  }
+}
+
+.offering-search {
+  @extend .main-content;
+  @extend .main-content--white;
+  width: 27%;
+  border-radius: 4px;
+  float: right;
+
+  &__title {
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+  }
+
+  &__category {
+    height: 25px;
+    line-height: 25px;
+  }
+}
+
 
 .column {
   width: 50%;

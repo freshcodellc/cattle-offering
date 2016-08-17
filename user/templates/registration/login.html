@@ -30,9 +30,9 @@
     </div>
     {% url 'password_reset' as password_reset_url %}
     {% if password_reset_url %}
-    <div class="form-login-password-reset">
-      <a class="form-login-password-reset__link" href="{{ password_reset_url }}">{% trans 'Forgot password?' %}</a>
-      <a class="form-login-password-reset__register" href="{% url 'register' %}">Not a member?</a>
+    <div class="form-login-link">
+      <a class="form-login-link__pwd-reset" href="{{ password_reset_url }}">{% trans 'Forgot password?' %}</a>
+      <a class="form-login-link__register" href="{% url 'register' %}">Not a member?</a>
     </div>
     {% endif %}
     <div class="submit-row">

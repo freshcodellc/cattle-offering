@@ -2,7 +2,7 @@
 {% block title %}Offering{% endblock %}
 
 {% block content %}
-  <div class="main-content main-content--white">
+  <div class="offering-content">
     <h1 class="main-content__title">Offering</h1>
     {% for cattle in object_list %}
       <a href="{% url 'cattle:offering-detail' cattle.id %}"><h2>Bull Name: {{ cattle.bull_name }}</h2></a>
@@ -30,7 +30,17 @@
       <span>ribeye_area: {{ cattle.ribeye_area }}</span><br/>
       <span>fat_thickness: {{ cattle.fat_thickness }}</span><br/>
     {% empty %}
-      <p>No cattle currently in the system.</p>
+      <p class="offering-content__message">No cattle currently in the system.</p>
     {% endfor %}
+  </div>
+
+  <div class="offering-search">
+    <h3 class="offering-search__title">Find Cattle</h3>
+    <h5 class="offering-search__category">Type:</h5>
+    <h5 class="offering-search__category">Management:</h5>
+    <h5 class="offering-search__category">Production:</h5>
+    <h5 class="offering-search__category">Maternal:</h5>
+    <h5 class="offering-search__category">Carcass:</h5>
+    <h5 class="offering-search__category">Producer:</h5>
   </div>
 {% endblock %}
