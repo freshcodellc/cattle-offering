@@ -1,6 +1,25 @@
 from django.conf import settings
 from django.db import models
 
+from imagekit.models import ImageSpecField
+from imagekit.processors import ResizeToFit
+
+
+class Photo(models.Model):
+    title = models.CharField(max_length=50)
+    caption = models.CharField(max_length=100)
+    original_image = models.ImageField(upload_to='cattle_images/')
+    large_image = ImageSpecField(processors=[ResizeToFit(1000, 600)])
+    thumbnail = ImageSpecField(processors=[ResizeToFit(250, 250)],
+                               source='original_image')
+    cattle = models.ForeignKey('Cattle', related_name='photos')
+
+    def __str__(self):
+        return self.title
+
+    class Meta:
+        ordering = ['title']
+
 
 class Cattle(models.Model):
     # Breed Values

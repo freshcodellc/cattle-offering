@@ -29,6 +29,9 @@
       <span>marbling: {{ cattle.marbling }}</span><br/>
       <span>ribeye_area: {{ cattle.ribeye_area }}</span><br/>
       <span>fat_thickness: {{ cattle.fat_thickness }}</span><br/>
+      {% if cattle.photos.all.0 %}
+        <img src="{{ MEDIA_URL }}{{ cattle.photos.all.0.original_image }}" alt="{{ photos.all.0.title }}"/>
+      {% endif %}
     {% empty %}
       <p class="offering-content__message">No cattle currently in the system.</p>
     {% endfor %}

@@ -4,7 +4,7 @@ Django settings for cattle_offering project.
 import os
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
-
+print(BASE_DIR)
 SECRET_KEY = 'h)g&=1)m9xq+b6hihplzt27am9j5%qi@xn$f5x-9ls)v6c6a=f'
 
 DEBUG = False
@@ -28,8 +28,9 @@ INSTALLED_APPS = [
 
     # Other
     'compressor',
-    'localflavor',
-    'django_extensions'
+    'django_extensions',
+    'imagekit',
+    'localflavor'
 ]
 
 MIDDLEWARE_CLASSES = [
@@ -110,11 +111,11 @@ STATICFILES_FINDERS = (
 )
 
 # Static files
-STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, '/static'))
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
 # Media files
-MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, '/media'))
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = '/media/'
 
 # Compressor
