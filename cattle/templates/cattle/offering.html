@@ -2,36 +2,28 @@
 {% block title %}Offering{% endblock %}
 
 {% block content %}
-  <div class="offering-content">
-    <h1 class="main-content__title">Offering</h1>
+  <div class="offering-content clear">
+    <h1 class="main-content__title">All Offers</h1>
     {% for cattle in object_list %}
-      <a href="{% url 'cattle:offering-detail' cattle.id %}"><h2>Bull Name: {{ cattle.bull_name }}</h2></a>
-      <span>producer: {{ cattle.producer.email }}</span><br/>
-      <span>lot_number: {{ cattle.lot_number }}</span><br/>
-      <span>breed: {{ cattle.breed }}</span><br/>
-      <span>sex: {{ cattle.sex }}</span><br/>
-      <span>female_type: {{ cattle.female_type }}</span><br/>
-      <span>registration_number: {{ cattle.registration_number }}</span><br/>
-      <span>sire: {{ cattle.sire }}</span><br/>
-      <span>dame: {{ cattle.dame }}</span><br/>
-      <span>scrotal_circumference: {{ cattle.scrotal_circumference }}</span><br/>
-      <span>birth_weight: {{ cattle.birth_weight }}</span><br/>
-      <span>weaning_weight: {{ cattle.weaning_weight }}</span><br/>
-      <span>yearling_weight: {{ cattle.yearling_weight }}</span><br/>
-      <span>residual_average_daily_gain: {{ cattle.residual_average_daily_gain }}</span><br/>
-      <span>heifer_pregnancy: {{ cattle.heifer_pregnancy }}</span><br/>
-      <span>calving_ease_maternal: {{ cattle.calving_ease_maternal }}</span><br/>
-      <span>maternal_milk: {{ cattle.maternal_milk }}</span><br/>
-      <span>mature_weight: {{ cattle.mature_weight }}</span><br/>
-      <span>mature_height: {{ cattle.mature_height }}</span><br/>
-      <span>cow_energy_value: {{ cattle.cow_energy_value }}</span><br/>
-      <span>carcass_weight: {{ cattle.carcass_weight }}</span><br/>
-      <span>marbling: {{ cattle.marbling }}</span><br/>
-      <span>ribeye_area: {{ cattle.ribeye_area }}</span><br/>
-      <span>fat_thickness: {{ cattle.fat_thickness }}</span><br/>
-      {% if cattle.photos.all.0 %}
-        <img src="{{ MEDIA_URL }}{{ cattle.photos.all.0.original_image }}" alt="{{ photos.all.0.title }}"/>
-      {% endif %}
+    <div class="offering-content-listing clear">
+      <div class="offering-content-listing__column">
+        {% if cattle.photos.all.0 %}
+        <img class="offering-content-listing__image" src="{{ MEDIA_URL }}{{ cattle.photos.all.0.original_image }}" alt="{{ photos.all.0.title }}"/>
+        {% endif %}
+      </div>
+      <div class="offering-content-listing__column">
+        <span class="offering-content-listing__item"><strong>Lot #:</strong> {{ cattle.lot_number }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Bull Name:</strong> {{ cattle.bull_name }}</span></br/>
+        <span class="offering-content-listing__item"><strong>Producer:</strong> {{ cattle.producer.name }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Breed:</strong> {{ cattle.breed }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.sex }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span><br/>
+        </br>
+        <button class="button__watchlist" type="submit" value="">+ Watch List</button></br>
+        </br>
+        <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
+      </div>
+    </div>
     {% empty %}
       <p class="offering-content__message">No cattle currently in the system.</p>
     {% endfor %}
