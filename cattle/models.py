@@ -7,7 +7,7 @@ from imagekit.processors import ResizeToFit
 
 class Photo(models.Model):
     title = models.CharField(max_length=50)
-    caption = models.CharField(max_length=100)
+    caption = models.CharField(max_length=100, null=True, blank=True)
     original_image = models.ImageField(upload_to='cattle_images/')
     large_image = ImageSpecField(processors=[ResizeToFit(1000, 600)])
     thumbnail = ImageSpecField(processors=[ResizeToFit(250, 250)],
@@ -95,6 +95,12 @@ class Cattle(models.Model):
     marbling = models.DecimalField(max_digits=3, decimal_places=2)
     ribeye_area = models.DecimalField(max_digits=3, decimal_places=2)
     fat_thickness = models.DecimalField(max_digits=3, decimal_places=3)
+    video_url = models.UrlField(null=True, blank=True)
+    updated = models.DateTimeField(auto_now=True)
+    created = models.DateTimeField(auto_now_add=True)
+
+    def __str__(self):
+        return self.bull_name
 
     class Meta:
         verbose_name_plural = 'cattle'
