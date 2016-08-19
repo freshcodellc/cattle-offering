@@ -1,3 +1,5 @@
+/*----->> General Structure <<-----*/
+
 * {
   margin: 0;
   padding: 0;
@@ -20,6 +22,91 @@ header {
   width: 100%;
 }
 
+/*----->> General Helpers <<-----*/
+
+.clear:after {
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+}
+
+/*----->> Buttons <<-----*/
+
+.button {
+  color: $white;
+  font-size: 15px;
+  background-color: $dark-tan;
+  border: none;
+  border-radius: 3px;
+  float: right;
+
+  &__contact {
+    @extend .button;
+    height: 35px;
+    width: 70px;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__reset {
+    @extend .button;
+    height: 25px;
+    width: 35%;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__signup {
+    @extend .button__contact;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__confirm {
+    @extend .button;
+    height: 25px;
+    width: 42%;
+    margin-top: 5px;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__login {
+    @extend .button__contact;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+
+  &__change {
+    @extend .button;
+    height: 25px;
+    width: 185px;
+
+    &:hover {
+      background-color: $light-tan;
+      cursor: pointer;
+    }
+  }
+}
+
+/*----->> Home Page - Action Menu <<-----*/
+
 .action-menu {
   text-align: right;
   height: 39px;
@@ -41,6 +128,8 @@ header {
     }
   }
 }
+
+/*----->> Home Page - Main Menu & Hero <<-----*/
 
 .brand-header {
   background: url('../img/main-menu-bg.jpg');
@@ -131,6 +220,8 @@ header {
   }
 }
 
+/*----->> Home Page - Body <<-----*/
+
 .main-content {
   margin-top: 30px;
   margin-bottom: 30px;
@@ -152,6 +243,57 @@ header {
     line-height: 25px;
   }
 }
+
+.column {
+  width: 50%;
+  float: left;
+  padding: 0px 15px 0px 15px;
+
+  @include mobile-lg {
+    width: 100%;
+  }
+
+  &:first-child {
+    border-right: 1px solid $light-tan;
+
+    @include mobile-lg {
+      border-right: none;
+      margin-bottom: 20px;
+    }
+  }
+
+  &__header {
+    border: 1px solid $light-tan;
+    height: 55px;
+    line-height: 55px;
+  }
+
+  &__title {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 23px;
+    color: $light-tan;
+  }
+
+  &__paragraph {
+    padding-top: 1em;
+    font-size: 17px;
+    line-height: 25px;
+    color: $white;
+  }
+}
+
+.email {
+  text-decoration: none;
+  color: $light-tan;
+
+  &:hover {
+    color: $dark-tan;
+    text-decoration: underline;
+  }
+}
+
+/*----->> Contact Us <<-----*/
 
 .contact-form {
   padding-top: 20px;
@@ -222,77 +364,7 @@ header {
   }
 }
 
-.button {
-  color: $white;
-  font-size: 15px;
-  background-color: $dark-tan;
-  border: none;
-  border-radius: 3px;
-  float: right;
-
-  &__contact {
-    @extend .button;
-    height: 35px;
-    width: 70px;
-
-    &:hover {
-      background-color: $light-tan;
-      cursor: pointer;
-    }
-  }
-
-  &__reset {
-    @extend .button;
-    height: 25px;
-    width: 35%;
-
-    &:hover {
-      background-color: $light-tan;
-      cursor: pointer;
-    }
-  }
-
-  &__signup {
-    @extend .button__contact;
-
-    &:hover {
-      background-color: $light-tan;
-      cursor: pointer;
-    }
-  }
-
-  &__confirm {
-    @extend .button;
-    height: 25px;
-    width: 42%;
-    margin-top: 5px;
-
-    &:hover {
-      background-color: $light-tan;
-      cursor: pointer;
-    }
-  }
-
-  &__login {
-    @extend .button__contact;
-
-    &:hover {
-      background-color: $light-tan;
-      cursor: pointer;
-    }
-  }
-
-  &__change {
-    @extend .button;
-    height: 25px;
-    width: 185px;
-
-    &:hover {
-      background-color: $light-tan;
-      cursor: pointer;
-    }
-  }
-}
+/*----->> Log In <<-----*/
 
 .form-login {
   padding-top: 20px;
@@ -318,6 +390,13 @@ header {
       border: 1px solid $gray;
       border-radius: 2px;
     }
+  }
+
+  &__submit {
+    width: 30%;
+    margin-left: 30%;
+    height: 35px;
+    line-height: 35%;
   }
 }
 
@@ -358,12 +437,7 @@ header {
   }
 }
 
-.submit-row {
-  width: 30%;
-  margin-left: 30%;
-  height: 35px;
-  line-height: 35%;
-}
+/*----->> Register <<-----*/
 
 .form-signup {
   padding-top: 20px;
@@ -409,6 +483,8 @@ header {
     border-radius: 2px;
   }
 }
+
+/*----->> Password Rest/Change <<-----*/
 
 .errorlist li {
   height: 25px;
@@ -582,6 +658,8 @@ header {
   }
 }
 
+/*----->> Offering <<-----*/
+
 .offering-content {
   @extend .main-content;
   @extend .main-content--white;
@@ -591,6 +669,11 @@ header {
 
   &__message {
     margin-top: 20px;
+  }
+
+  &__image {
+    width: 115px;
+    height: auto;
   }
 }
 
@@ -613,55 +696,7 @@ header {
   }
 }
 
-
-.column {
-  width: 50%;
-  float: left;
-  padding: 0px 15px 0px 15px;
-
-  @include mobile-lg {
-    width: 100%;
-  }
-
-  &:first-child {
-    border-right: 1px solid $light-tan;
-
-    @include mobile-lg {
-      border-right: none;
-      margin-bottom: 20px;
-    }
-  }
-
-  &__header {
-    border: 1px solid $light-tan;
-    height: 55px;
-    line-height: 55px;
-  }
-
-  &__title {
-    text-align: center;
-    text-transform: uppercase;
-    font-size: 23px;
-    color: $light-tan;
-  }
-
-  &__paragraph {
-    padding-top: 1em;
-    font-size: 17px;
-    line-height: 25px;
-    color: $white;
-  }
-}
-
-.email {
-  text-decoration: none;
-  color: $light-tan;
-
-  &:hover {
-    color: $dark-tan;
-    text-decoration: underline;
-  }
-}
+/*----->> Footer Menu <<-----*/
 
 .footer {
   height: 140px;
@@ -707,12 +742,4 @@ header {
       padding-right: 0px;
     }
   }
-}
-
-/* HELPERS */
-.clear:after {
-    display: block;
-    font-size: 0;
-    content: " ";
-    clear: both;
 }
