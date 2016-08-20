@@ -5,9 +5,27 @@
   <div class="main-content main-content--white">
     <h1 class="main-content__title">Offering</h1>
     {% for cattle in object_list %}
-      <h2>{{ cattle.bull_name }}</h2>
+    <div class="offering-content-listing clear">
+      <div class="offering-content-listing__column">
+        {% if cattle.photos.all.0 %}
+        <img class="offering-content-listing__image" src="{{ MEDIA_URL }}{{ cattle.photos.all.0.original_image }}" alt="{{ photos.all.0.title }}"/>
+        {% endif %}
+      </div>
+      <div class="offering-content-listing__column">
+        <span class="offering-content-listing__item"><strong>Lot #:</strong> {{ cattle.lot_number }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Bull Name:</strong> {{ cattle.bull_name }}</span></br/>
+        <span class="offering-content-listing__item"><strong>Producer:</strong> {{ cattle.producer.name }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Breed:</strong> {{ cattle.breed }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.sex }}</span><br/>
+        <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span><br/>
+        </br>
+        <button class="button__watchlist" type="submit" value="">+ Watch List</button></br>
+        </br>
+        <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
+      </div>
+    </div>
     {% empty %}
-      <p>No cattle currently in the system.</p>
+      <p class="offering-content__message">No cattle currently in the system.</p>
     {% endfor %}
   </div>
 {% endblock %}

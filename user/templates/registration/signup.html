@@ -4,6 +4,11 @@
 {% block content %}
   <div class="main-content main-content--white clear">
     <h1 class="main-content__title">Sign Up</h1>
+    {% if messages %}
+      {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
     {% if form.errors %}
       {% for field in form.errors %}
       {% endfor %}

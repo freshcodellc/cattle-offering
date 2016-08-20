@@ -1,5 +1,6 @@
+from django.contrib import messages
 from django.http import HttpResponseRedirect
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic import View
 
@@ -15,6 +16,12 @@ class CattleListView(ListView):
 class CattleDetailView(DetailView):
     model = Cattle
     template_name = 'cattle/offering_detail.html'
+
+    def dispatch(self, request, *args, **kwargs):
+        if not request.user or request.user.is_anonymous():
+            messages.add_message(request, messages.INFO, 'You must sign up for an account before you can access full listings.')
+            return redirect('/account/register')
+        return super(CattleDetailView, self).dispatch(request, *args, **kwargs)
 
 
 class ImportCattleView(View):
