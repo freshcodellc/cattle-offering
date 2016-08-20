@@ -9,7 +9,7 @@ from cattle.models import Cattle
 
 class RegistrationView(CreateView):
     model = get_user_model()
-    fields = ['first_name', 'last_name', 'email', 'password', 'newsletter']
+    fields = ['name', 'email', 'password', 'newsletter']
     template_name = 'registration/signup.html'
     success_url = '/thanks/'
 

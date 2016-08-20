@@ -95,7 +95,7 @@ class Cattle(models.Model):
     marbling = models.DecimalField(max_digits=3, decimal_places=2)
     ribeye_area = models.DecimalField(max_digits=3, decimal_places=2)
     fat_thickness = models.DecimalField(max_digits=3, decimal_places=3)
-    video_url = models.UrlField(null=True, blank=True)
+    video_url = models.URLField(null=True, blank=True)
     updated = models.DateTimeField(auto_now=True)
     created = models.DateTimeField(auto_now_add=True)
 

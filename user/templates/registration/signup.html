@@ -10,13 +10,10 @@
     {% endif %}
     <form class="form-signup" method="post" action="{% url 'register' %}">
       {% csrf_token %}
+      {{ form.name.errors }}
       <div class="form-signup__wrapper">
-        <label class="form-signup__label" for="id_first_name">First name:</label>
-        {{ form.first_name|addclass:'signup__first-name' }}
-      </div>
-      <div class="form-signup__wrapper">
-        <label class="form-signup__label" for="id_last_name">Last name:</label>
-        {{ form.last_name|addclass:'signup__last-name' }}
+        <label class="form-signup__label" for="id_name">Name:</label>
+        {{ form.name|addclass:'signup__first-name' }}
       </div>
       {{ form.email.errors }}
       <div class="form-signup__wrapper">
