@@ -1,5 +1,5 @@
 from django.contrib import messages
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
 from django.views.generic import ListView, DetailView
 from django.views.generic import View
@@ -22,6 +22,22 @@ class CattleDetailView(DetailView):
             messages.add_message(request, messages.INFO, 'You must sign up for an account before you can access full listings.')
             return redirect('/account/register')
         return super(CattleDetailView, self).dispatch(request, *args, **kwargs)
+
+
+class ToggleCattleWatchView(DetailView):
+    model = Cattle
+
+    def get(self, request, *args, **kwargs):
+        if request.user and not request.user.is_anonymous():
+            action = self.kwargs['action']
+            u = request.user
+            c = self.get_object()
+            if action == 'add':
+                u.watch_list.add(c)
+            elif action == 'remove':
+                u.watch_list.remove(c)
+            return JsonResponse({'status': 'success', 'message': 'Successfully added to watchlist!'})
+        return JsonResponse({'status': 'error', 'message': 'You must be logged in to perform this action.'})
 
 
 class ImportCattleView(View):

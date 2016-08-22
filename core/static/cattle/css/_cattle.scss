@@ -31,6 +31,10 @@ header {
   clear: both;
 }
 
+.is-hidden {
+  display: none;
+}
+
 /*----->> Buttons <<-----*/
 
 .button {
@@ -123,7 +127,7 @@ header {
     text-align: center;
     width: 50%;
     text-decoration: none;
-    float: left;  
+    float: left;
 
     &:hover {
       background-color: $light-tan;

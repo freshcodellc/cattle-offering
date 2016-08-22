@@ -19,8 +19,7 @@
         <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.sex }}</span><br/>
         <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span><br/>
         </br>
-        <button class="button__watchlist" type="submit" value="">+ Watch List</button></br>
-        </br>
+        <span class="button__watchlist button__watchlist--remove js-watchlist-remove" data-remove="true" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span><br/><br/>
         <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
       </div>
     </div>
