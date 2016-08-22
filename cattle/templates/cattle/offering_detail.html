@@ -1,6 +1,8 @@
 {% extends 'base.html' %}
 {% block title %}Offering{% endblock %}
 
+{% load embed_video_tags %}
+
 {% block content %}
   <div class="main-content main-content--white">
     <h1 class="main-content__title">{{ object.bull_name }}</h1>
@@ -28,5 +30,6 @@
     <span>marbling: {{ object.marbling }}</span><br/>
     <span>ribeye_area: {{ object.ribeye_area }}</span><br/>
     <span>fat_thickness: {{ object.fat_thickness }}</span><br/>
+    {% video object.video_url %}
   </div>
 {% endblock %}
