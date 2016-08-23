@@ -1,4 +1,4 @@
-FROM python:3.4
+FROM python:3.5
 ENV PYTHONUNBUFFERED 1
 ENV TERM linux
 ENV TERMINFO /etc/terminfo
