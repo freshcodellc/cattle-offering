@@ -18,6 +18,8 @@ class RegistrationView(CreateView):
         user.type = user.BUYER
         user.set_password(user.password)
         user.save()
+        if user.newsletter:
+            user.add_email_to_mailing_list()
         user = authenticate(username=user.email, password=form.cleaned_data['password'])
         login(self.request, user)
         return super().form_valid(form)

@@ -4,7 +4,7 @@ Django settings for cattle_offering project.
 import os
 
 BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), '../..'))
-print(BASE_DIR)
+
 SECRET_KEY = 'h)g&=1)m9xq+b6hihplzt27am9j5%qi@xn$f5x-9ls)v6c6a=f'
 
 DEBUG = False
@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     # Other
     'compressor',
     'django_extensions',
-    'embed_video', 
+    'embed_video',
     'imagekit',
     'localflavor'
 ]
@@ -123,3 +123,7 @@ MEDIA_URL = '/media/'
 COMPRESS_PRECOMPILERS = (
     ('text/x-scss', 'django_libsass.SassCompiler'),
 )
+
+# Mailchimp - API_KEY is production and LIST_ID is a test list ID
+MAILCHIMP_API_KEY = '6c1e85312a1322f32d7c5752e34a8f0f-us12'
+MAILCHIMP_LIST_ID = '87ca6fda8e'

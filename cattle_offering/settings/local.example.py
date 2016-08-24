@@ -14,6 +14,3 @@ DATABASES = {
 }
 
 DEBUG = True
-
-# Celery Broker
-BROKER_URL = 'django://'

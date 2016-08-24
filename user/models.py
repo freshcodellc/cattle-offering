@@ -1,10 +1,13 @@
+from django.conf import settings
 from django.contrib.auth.models import (
     AbstractBaseUser, PermissionsMixin, BaseUserManager
 )
 from django.db import models
 
 from localflavor.us.models import PhoneNumberField, USStateField, USZipCodeField
+import mailchimp
 
+from cattle_offering.utils import get_mailchimp_api
 from cattle.models import Cattle
 
 
@@ -91,6 +94,22 @@ class User(AbstractBaseUser, PermissionsMixin):
         "Does the user have permissions to view the app `app_label`?"
         # Simplest possible answer: Yes, always
         return True
+
+    def add_email_to_mailing_list(self):
+        if self.email and self.name:
+            try:
+                m = get_mailchimp_api()
+                response = m.lists.subscribe(settings.MAILCHIMP_LIST_ID,
+                                             {'email': self.email},
+                                             {'EMAIL': self.email, 'NAME': self.name},
+                                             'html',
+                                             False)
+                return response
+            except mailchimp.Error as e:
+                print('An error occurred: %s - %s' % (e.__class__, e))
+                return False
+        else:
+            return False
 
     @property
     def is_staff(self):
