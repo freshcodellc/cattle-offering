@@ -1,0 +1,4 @@
+Name: {{ name }} \n
+Email: {{ email }} \n
+Subject: {{ subject }} \n
+Message: {{ message }}
