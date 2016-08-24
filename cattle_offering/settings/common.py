@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     # Other
     'compressor',
     'django_extensions',
+    'djrill',
     'embed_video',
     'imagekit',
     'localflavor'
