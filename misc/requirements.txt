@@ -9,6 +9,7 @@ django-appconf==1.0.2
 django-compressor==2.0
 django-embed-video==1.1.0
 django-extensions==1.6.7
+django-filter==0.14.0
 django-imagekit==3.3
 django-libsass==0.7
 django-localflavor==1.3
