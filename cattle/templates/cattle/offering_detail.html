@@ -6,30 +6,34 @@
 {% block content %}
   <div class="main-content main-content--white">
     <h1 class="main-content__title">{{ object.bull_name }}</h1>
-    <h2>Bull Name: {{ object.bull_name }}</h2>
-    <span>producer: {{ object.producer.email }}</span><br/>
-    <span>lot_number: {{ object.lot_number }}</span><br/>
-    <span>breed: {{ object.breed }}</span><br/>
-    <span>sex: {{ object.sex }}</span><br/>
-    <span>female_type: {{ object.female_type }}</span><br/>
-    <span>registration_number: {{ object.registration_number }}</span><br/>
-    <span>sire: {{ object.sire }}</span><br/>
-    <span>dame: {{ object.dame }}</span><br/>
-    <span>scrotal_circumference: {{ object.scrotal_circumference }}</span><br/>
-    <span>birth_weight: {{ object.birth_weight }}</span><br/>
-    <span>weaning_weight: {{ object.weaning_weight }}</span><br/>
-    <span>yearling_weight: {{ object.yearling_weight }}</span><br/>
-    <span>residual_average_daily_gain: {{ object.residual_average_daily_gain }}</span><br/>
-    <span>heifer_pregnancy: {{ object.heifer_pregnancy }}</span><br/>
-    <span>calving_ease_maternal: {{ object.calving_ease_maternal }}</span><br/>
-    <span>maternal_milk: {{ object.maternal_milk }}</span><br/>
-    <span>mature_weight: {{ object.mature_weight }}</span><br/>
-    <span>mature_height: {{ object.mature_height }}</span><br/>
-    <span>cow_energy_value: {{ object.cow_energy_value }}</span><br/>
-    <span>carcass_weight: {{ object.carcass_weight }}</span><br/>
-    <span>marbling: {{ object.marbling }}</span><br/>
-    <span>ribeye_area: {{ object.ribeye_area }}</span><br/>
-    <span>fat_thickness: {{ object.fat_thickness }}</span><br/>
-    {% video object.video_url %}
+    <div class="offering-detail__container">
+      <span class="offering-detail__item"><strong>Producer:</strong> {{ object.producer.email }}</span>
+      <span class="offering-detail__item"><strong>Lot #:</strong> {{ object.lot_number }}</span>
+      <span class="offering-detail__item"><strong>Breed:</strong> {{ object.breed }}</span>
+      <span class="offering-detail__item"><strong>Sex:</strong> {{ object.sex }}</span>
+      <span class="offering-detail__item"><strong>Female Type:</strong> {{ object.female_type }}</span>
+      <span class="offering-detail__item"><strong>Registration Number:</strong> {{ object.registration_number }}</span>
+      <span class="offering-detail__item"><strong>Sire:</strong> {{ object.sire }}</span>
+      <span class="offering-detail__item"><strong>Dame:</strong> {{ object.dame }}</span>
+      <span class="offering-detail__item"><strong>Scrotal Circumference:</strong> {{ object.scrotal_circumference }}</span>
+      <span class="offering-detail__item"><strong>Birth Weight:</strong> {{ object.birth_weight }}</span>
+      <span class="offering-detail__item"><strong>Weaning Weight:</strong> {{ object.weaning_weight }}</span>
+      <span class="offering-detail__item"><strong>Yearling Weight:</strong> {{ object.yearling_weight }}</span>
+      <span class="offering-detail__item"><strong>Residual Average Daily Gain:</strong> {{ object.residual_average_daily_gain }}</span>
+      <span class="offering-detail__item"><strong>Heifer Pregnancy:</strong> {{ object.heifer_pregnancy }}</span>
+      <span class="offering-detail__item"><strong>Calving Ease Maternal:</strong> {{ object.calving_ease_maternal }}</span>
+      <span class="offering-detail__item"><strong>Maternal Milk:</strong> {{ object.maternal_milk }}</span>
+      <span class="offering-detail__item"><strong>Mature Weight:</strong> {{ object.mature_weight }}</span>
+      <span class="offering-detail__item"><strong>Mature Height:</strong> {{ object.mature_height }}</span>
+      <span class="offering-detail__item"><strong>Cow Energy Value:</strong> {{ object.cow_energy_value }}</span>
+      <span class="offering-detail__item"><strong>Carcass Weight:</strong> {{ object.carcass_weight }}</span>
+      <span class="offering-detail__item"><strong>Marbling:</strong> {{ object.marbling }}</span>
+      <span class="offering-detail__item"><strong>Ribeye Area:</strong> {{ object.ribeye_area }}</span>
+      <span class="offering-detail__item"><strong>Fat Thickness:</strong> {{ object.fat_thickness }}</span>
+    </div>
+    
+    <div class="offering-detail__video">
+      {% video object.video_url %}
+    </div>
   </div>
 {% endblock %}

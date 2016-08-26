@@ -18,7 +18,6 @@
         <span class="offering-content-listing__item"><strong>Breed:</strong> {{ cattle.breed }}</span>
         <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.sex }}</span>
         <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span>
-        </br>
         {% if request.user and not request.user.is_anonymous %}
           {% if cattle in request.user.watch_list.all %}
             <span class="button__watchlist button__watchlist--remove js-watchlist-remove" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
@@ -28,7 +27,6 @@
             <span class="button__watchlist button__watchlist--remove js-watchlist-remove is-hidden" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
           {% endif %}
         {% endif %}
-
         <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
       </div>
     </div>
