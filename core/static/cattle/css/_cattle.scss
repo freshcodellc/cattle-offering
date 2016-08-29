@@ -116,7 +116,7 @@ header {
     text-align: center;
     float: left;
     display: block;
-    margin: 10px 0px 10px 0px;
+    margin-top: 10px;
 
     &--remove {
       @extend .button__watchlist;
@@ -137,7 +137,7 @@ header {
     text-decoration: none;
     display: block;
     float: left;
-    margin: 10px 0px 10px 0px;
+    margin-top: 10px;
 
     &:hover {
       background-color: $light-tan;
@@ -727,9 +727,9 @@ header {
 
   &__item {
     text-decoration: none;
-    display: block;
     height: 25px;
     line-height: 25px;
+    display: block;
   }
 
   &__image {
@@ -759,15 +759,36 @@ header {
 
 .offering-detail {
 
-  &__container {
-    padding-top: 20px;
+  &__heading {
+    display: block;
+    font-size: 18px;
+    color: $dark-tan;
+    padding: 10px 0px 10px 0px;
   }
 
-  &__item {
+  &__row {
     display: block;
     height: 25px;
     line-height: 25px;
-    font-size: 12px;
+    width: 100%;
+  }
+
+  &__button-row {
+    display: block;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 6px;
+  }
+
+  &__label {
+    float: left;
+    font-size: 13px;
+    width: 30%;
+  }
+
+  &__item {
+    font-size: 13px;
+    display: block;
   }
 }
 

@@ -4,36 +4,118 @@
 {% load embed_video_tags %}
 
 {% block content %}
-  <div class="main-content main-content--white">
+  <div class="main-content main-content--white clear">
     <h1 class="main-content__title">{{ object.bull_name }}</h1>
-    <div class="offering-detail__container">
-      <span class="offering-detail__item"><strong>Producer:</strong> {{ object.producer.email }}</span>
-      <span class="offering-detail__item"><strong>Lot #:</strong> {{ object.lot_number }}</span>
-      <span class="offering-detail__item"><strong>Breed:</strong> {{ object.breed }}</span>
-      <span class="offering-detail__item"><strong>Sex:</strong> {{ object.sex }}</span>
-      <span class="offering-detail__item"><strong>Female Type:</strong> {{ object.female_type }}</span>
-      <span class="offering-detail__item"><strong>Registration Number:</strong> {{ object.registration_number }}</span>
-      <span class="offering-detail__item"><strong>Sire:</strong> {{ object.sire }}</span>
-      <span class="offering-detail__item"><strong>Dame:</strong> {{ object.dame }}</span>
-      <span class="offering-detail__item"><strong>Scrotal Circumference:</strong> {{ object.scrotal_circumference }}</span>
-      <span class="offering-detail__item"><strong>Birth Weight:</strong> {{ object.birth_weight }}</span>
-      <span class="offering-detail__item"><strong>Weaning Weight:</strong> {{ object.weaning_weight }}</span>
-      <span class="offering-detail__item"><strong>Yearling Weight:</strong> {{ object.yearling_weight }}</span>
-      <span class="offering-detail__item"><strong>Residual Average Daily Gain:</strong> {{ object.residual_average_daily_gain }}</span>
-      <span class="offering-detail__item"><strong>Heifer Pregnancy:</strong> {{ object.heifer_pregnancy }}</span>
-      <span class="offering-detail__item"><strong>Calving Ease Maternal:</strong> {{ object.calving_ease_maternal }}</span>
-      <span class="offering-detail__item"><strong>Maternal Milk:</strong> {{ object.maternal_milk }}</span>
-      <span class="offering-detail__item"><strong>Mature Weight:</strong> {{ object.mature_weight }}</span>
-      <span class="offering-detail__item"><strong>Mature Height:</strong> {{ object.mature_height }}</span>
-      <span class="offering-detail__item"><strong>Cow Energy Value:</strong> {{ object.cow_energy_value }}</span>
-      <span class="offering-detail__item"><strong>Carcass Weight:</strong> {{ object.carcass_weight }}</span>
-      <span class="offering-detail__item"><strong>Marbling:</strong> {{ object.marbling }}</span>
-      <span class="offering-detail__item"><strong>Ribeye Area:</strong> {{ object.ribeye_area }}</span>
-      <span class="offering-detail__item"><strong>Fat Thickness:</strong> {{ object.fat_thickness }}</span>
-    </div>
-    
-    <div class="offering-detail__video">
-      {% video object.video_url %}
+    <div class="offering-detail__container clear">
+      <span class="offering-detail__heading">Video:</span>
+      <div class="offering-detail__video">
+        {% video object.video_url %}
+        <div class="offering-detail__button-row">
+          {% if request.user and not request.user.is_anonymous %}
+            {% if cattle in request.user.watch_list.all %}
+              <span class="button__watchlist button__watchlist--remove js-watchlist-remove" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
+              <span class="button__watchlist js-watchlist-add is-hidden" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'add' %}">+ Watch List</span>
+            {% else %}
+              <span class="button__watchlist js-watchlist-add" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'add' %}">+ Watch List</span>
+              <span class="button__watchlist button__watchlist--remove js-watchlist-remove is-hidden" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
+            {% endif %}
+          {% endif %}
+        </div>
+      </div>
+      <span class="offering-detail__heading">Detailed Description:</span>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Producer:</strong>
+        <span class="offering-detail__item">{{ object.producer.email }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Lot #:</strong>
+        <span class="offering-detail__item">{{ object.lot_number }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Breed:</strong>
+        <span class="offering-detail__item">{{ object.breed }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Sex:</strong>
+        <span class="offering-detail__item">{{ object.sex }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Female Type:</strong>
+        <span class="offering-detail__item">{{ object.female_type }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Registration #:</strong>
+        <span class="offering-detail__item">{{ object.registration_number }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Sire:</strong>
+        <span class="offering-detail__item">{{ object.sire }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Dame:</strong>
+        <span class="offering-detail__item">{{ object.dame }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Scrotal Circumference:</strong>
+        <span class="offering-detail__item">{{ object.scrotal_circumference }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Birth Weight:</strong>
+        <span class="offering-detail__item">{{ object.birth_weight }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Weaning Weight:</strong>
+        <span class="offering-detail__item">{{ object.weaning_weight }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Yearling Weight:</strong>
+        <span class="offering-detail__item">{{ object.yearling_weight }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Residual Average Daily Gain:</strong>
+        <span class="offering-detail__item">{{ object.residual_average_daily_gain }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Heifer Pregnancy:</strong>
+        <span class="offering-detail__item">{{ object.heifer_pregnancy }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Calving Ease Maternal:</strong>
+        <span class="offering-detail__item">{{ object.calving_ease_maternal }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Maternal Milk:</strong>
+        <span class="offering-detail__item">{{ object.maternal_milk }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Mature Weight:</strong>
+        <span class="offering-detail__item">{{ object.mature_weight }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Mature Height:</strong>
+        <span class="offering-detail__item">{{ object.mature_height }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Cow Envergy Value:</strong>
+        <span class="offering-detail__item">{{ object.cow_energy_value }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Carcass Weight:</strong>
+        <span class="offering-detail__item">{{ object.carcass_weight }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Marbling:</strong>
+        <span class="offering-detail__item">{{ object.marbling }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Ribeye Area:</strong>
+        <span class="offering-detail__item">{{ object.ribeye_area }}</span>
+      </div>
+      <div class="offering-detail__row">
+        <strong class="offering-detail__label">Fat Thickness:</strong>
+        <span class="offering-detail__item">{{ object.fat_thickness }}</span>
+      </div>
+
     </div>
   </div>
 {% endblock %}
