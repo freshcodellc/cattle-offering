@@ -1,15 +1,17 @@
 from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
-from django.views.generic import ListView, DetailView
+from django.views.generic import DetailView
 from django.views.generic import View
+from django_filters.views import FilterView
 
+from .filters import CattleFilter
 from .forms import ImportCattleForm
 from .models import Cattle
 
 
-class CattleListView(ListView):
-    model = Cattle
+class CattleFilterListView(FilterView):
+    filterset_class = CattleFilter
     template_name = 'cattle/offering.html'
 
 

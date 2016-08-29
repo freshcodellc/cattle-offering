@@ -37,11 +37,9 @@
 
   <div class="offering-search">
     <h3 class="offering-search__title">Find Cattle</h3>
-    <h5 class="offering-search__category">Type:</h5>
-    <h5 class="offering-search__category">Management:</h5>
-    <h5 class="offering-search__category">Production:</h5>
-    <h5 class="offering-search__category">Maternal:</h5>
-    <h5 class="offering-search__category">Carcass:</h5>
-    <h5 class="offering-search__category">Producer:</h5>
+    <form action="" method="get">
+        {{ filter.form.as_p }}
+        <input type="submit" />
+    </form>
   </div>
 {% endblock %}
