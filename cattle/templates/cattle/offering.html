@@ -37,11 +37,76 @@
 
   <div class="offering-search">
     <h3 class="offering-search__title">Find Cattle</h3>
-    <h5 class="offering-search__category">Type:</h5>
-    <h5 class="offering-search__category">Management:</h5>
-    <h5 class="offering-search__category">Production:</h5>
-    <h5 class="offering-search__category">Maternal:</h5>
-    <h5 class="offering-search__category">Carcass:</h5>
-    <h5 class="offering-search__category">Producer:</h5>
+    <form action="" method="get">
+      {{ form.non_field_errors }}
+      {{ form.name.errors }}
+      <h4>Production</h4>
+      <hr/>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.scrotal_circumference.id_for_label }}">Scrotal Circumference:</label>
+        {{ filter.form.scrotal_circumference }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.birth_weight.id_for_label }}">Birth Weight:</label>
+        {{ filter.form.birth_weight }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.weaning_weight.id_for_label }}">Weaning Weight:</label>
+        {{ filter.form.weaning_weight }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.yearling_weight.id_for_label }}">Yearling Weight:</label>
+        {{ filter.form.yearling_weight }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.residual_average_daily_gain.id_for_label }}">Residual Average Daily Gain:</label>
+        {{ filter.form.residual_average_daily_gain }}
+      </div>
+      <h4>Maternal</h4>
+      <hr/>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.heifer_pregnancy.id_for_label }}">Heifer Pregnancy:</label>
+        {{ filter.form.heifer_pregnancy }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.calving_ease_maternal.id_for_label }}">Calving Ease Maternal:</label>
+        {{ filter.form.calving_ease_maternal }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.maternal_milk.id_for_label }}">Maternal Milk:</label>
+        {{ filter.form.maternal_milk }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.mature_weight.id_for_label }}">Mature Weight:</label>
+        {{ filter.form.mature_weight }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.mature_height.id_for_label }}">Mature Height:</label>
+        {{ filter.form.mature_height }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.cow_energy_value.id_for_label }}">Cow Energy Value:</label>
+        {{ filter.form.cow_energy_value }}
+      </div>
+      <h4>Carcass</h4>
+      <hr/>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.carcass_weight.id_for_label }}">Carcass Weight:</label>
+        {{ filter.form.carcass_weight }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.marbling.id_for_label }}">Marbling:</label>
+        {{ filter.form.marbling }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.ribeye_area.id_for_label }}">Ribeye Area:</label>
+        {{ filter.form.ribeye_area }}
+      </div>
+      <div class="filter-form__row">
+        <label class="filter-form__label" for="{{ filter.form.fat_thickness.id_for_label }}">Fat Thickness:</label>
+        {{ filter.form.fat_thickness }}
+      </div>
+      <input type="submit" />
+    </form>
   </div>
 {% endblock %}

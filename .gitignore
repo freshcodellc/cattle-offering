@@ -10,3 +10,6 @@ celerybeat-schedule.db
 static/CACHE/
 media
 .cache
+
+# PyCharm
+.idea/
