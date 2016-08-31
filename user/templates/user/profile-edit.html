@@ -27,40 +27,40 @@
       </div>
       {{ form.phone.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_phone">Phone:</label>
+        <label class="form-profile__label" for="id_phone">Phone:</label>
         {{ form.phone|addclass:'profile__phone' }}
       </div>
       {{ form.address.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_address">Address:</label>
+        <label class="form-profile__label" for="id_address">Address:</label>
         {{ form.address|addclass:'profile__address' }}
       </div>
       {{ form.address2.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_address2">Address 2</label>
+        <label class="form-profile__label" for="id_address2">Address 2:</label>
         {{ form.address2|addclass:'profile__address2' }}
       </div>
       {{ form.city.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_city">City:</label>
+        <label class="form-profile__label" for="id_city">City:</label>
         {{ form.city|addclass:'profile__city' }}
       </div>
       {{ form.state.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_state">State:</label>
+        <label class="form-profile__label" for="id_state">State:</label>
         {{ form.state|addclass:'profile__state' }}
       </div>
       {{ form.zip.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_zip">Zip:</label>
+        <label class="form-profile__label" for="id_zip">Zip:</label>
         {{ form.zip|addclass:'profile__zip' }}
       </div>
       {{ form.newsletter.errors }}
       <div class="form-profile__wrapper">
-        <label class="form-profile__last" for="id_newsletter">Keep me updated via email!</label>
+        <label class="form-profile__label" for="id_newsletter">Keep me updated via email!</label>
         {{ form.newsletter|addclass:'profile__newsletter' }}
       </div>
-      <div class="form-profile__wrapper">
+      <div class="form-profile__button-wrapper">
         <button class="button__profile" type="submit" value="">Save</button>
       </div>
     </form>

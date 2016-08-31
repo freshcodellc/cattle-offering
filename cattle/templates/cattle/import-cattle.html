@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 {% block title %}Cattle Importer{% endblock %}
-
+{% load addclass %}
 {% block content %}
   <div class="main-content main-content--white">
     <h1 class="main-content__title">Cattle Importer</h1>
@@ -17,13 +17,13 @@
         </ul>
         {% endif %}
       {% endfor %}
-  
-      <form method="POST" enctype="multipart/form-data">
+
+      <form class="cattle-import-form" method="POST" enctype="multipart/form-data">
         {% csrf_token %}
         {{ form.cattle_xlsx.errors }}
-        <label for="{{ form.cattle_xlsx.id_for_label }}">Cattle Excel Spreadshet (.xlsx):</label>
-        {{ form.cattle_xlsx }}
-        <input type="submit" name="Submit">
+        <label class="cattle-import-form__label" for="{{ form.cattle_xlsx.id_for_label }}">Cattle Excel Spreadshet (.xlsx):</label>
+        {{ form.cattle_xlsx|addclass:'cattle-import__excel-button' }}
+        <input class="button__import" type="submit" name="Submit">
       </form>
   </div>
 {% endblock %}
