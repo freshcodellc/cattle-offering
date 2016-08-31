@@ -21,7 +21,7 @@
           <a class="action-menu__link" href="{% url 'login' %}">Log In</a>
         {% else %}
           <a class="action-menu__link" href="{% url 'watchlist' %}">Watch List</a>
-          <a class="action-menu__link" href="{% url 'register' %}">Register</a>
+          <a class="action-menu__link" href="{% url 'edit-profile' request.user.id %}">Profile</a>
           <a class="action-menu__link" href="{% url 'logout' %}">Log Out</a>
         {% endif %}
       </nav>

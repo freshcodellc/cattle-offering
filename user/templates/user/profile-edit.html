@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% load addclass %}
+
+{% block content %}
+  <div class="main-content main-content--white clear">
+    <h1 class="main-content__title">Profile</h1>
+    {% if messages %}
+      {% for message in messages %}
+        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+      {% endfor %}
+    {% endif %}
+    {% if form.errors %}
+      {% for field in form.errors %}
+      {% endfor %}
+    {% endif %}
+    <form class="form-signup" method="post" action="">
+      {% csrf_token %}
+      {{ form.name.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__label" for="id_name">Name:</label>
+        {{ form.name|addclass:'signup__first-name' }}
+      </div>
+      {{ form.email.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__label" for="id_email">Email address:</label>
+        {{ form.email|addclass:'signup__email' }}
+      </div>
+      {{ form.phone.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_phone">Phone:</label>
+        {{ form.phone|addclass:'signup__phone' }}
+      </div>
+      {{ form.address.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_address">Address:</label>
+        {{ form.address|addclass:'signup__address' }}
+      </div>
+      {{ form.address2.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_address2">Address 2</label>
+        {{ form.address2|addclass:'signup__address2' }}
+      </div>
+      {{ form.city.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_city">City:</label>
+        {{ form.city|addclass:'signup__city' }}
+      </div>
+      {{ form.state.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_state">State:</label>
+        {{ form.state|addclass:'signup__state' }}
+      </div>
+      {{ form.zip.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_zip">Zip:</label>
+        {{ form.zip|addclass:'signup__zip' }}
+      </div>
+      {{ form.newsletter.errors }}
+      <div class="form-signup__wrapper">
+        <label class="form-signup__last" for="id_newsletter">Keep me updated via email!</label>
+        {{ form.newsletter|addclass:'signup__newsletter' }}
+      </div>
+      <div class="form-signup__wrapper">
+        <button class="button__signup" type="submit" value="">Save</button>
+      </div>
+    </form>
+  </div>
+{% endblock %}
