@@ -1,9 +1,9 @@
+from django.contrib import messages
 from django.contrib.auth import authenticate, login, get_user_model
-from django.shortcuts import render, redirect
+from django.core.urlresolvers import reverse
 from django.views.generic import ListView
-from django.views.generic.edit import CreateView
+from django.views.generic.edit import CreateView, UpdateView
 
-from .models import User
 from cattle.models import Cattle
 
 
@@ -23,6 +23,24 @@ class RegistrationView(CreateView):
         user = authenticate(username=user.email, password=form.cleaned_data['password'])
         login(self.request, user)
         return super().form_valid(form)
+
+
+class EditProfileView(UpdateView):
+    model = get_user_model()
+    fields = ['name',
+              'email',
+              'phone',
+              'address',
+              'address2',
+              'city',
+              'state',
+              'zip',
+              'newsletter']
+    template_name = 'user/profile-edit.html'
+
+    def get_success_url(self):
+        messages.add_message(self.request, messages.INFO, 'Profile saved successfully.')
+        return reverse('edit-profile', args=(self.kwargs['pk'],))
 
 
 class WatchListView(ListView):

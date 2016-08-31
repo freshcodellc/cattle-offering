@@ -1,3 +1,4 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib import messages
 from django.http import HttpResponseRedirect, JsonResponse
 from django.shortcuts import render, redirect
@@ -8,6 +9,8 @@ from django_filters.views import FilterView
 from .filters import CattleFilter
 from .forms import ImportCattleForm
 from .models import Cattle
+
+from cattle_offering.mixins import SuperUserRequiredMixin
 
 
 class CattleFilterListView(FilterView):
@@ -21,7 +24,8 @@ class CattleDetailView(DetailView):
 
     def dispatch(self, request, *args, **kwargs):
         if not request.user or request.user.is_anonymous():
-            messages.add_message(request, messages.INFO, 'You must sign up for an account before you can access full listings.')
+            messages.add_message(request, messages.INFO, 'You must obtain an account before you can \
+                                                          access full listings.')
             return redirect('/account/register')
         return super(CattleDetailView, self).dispatch(request, *args, **kwargs)
 
@@ -38,11 +42,13 @@ class ToggleCattleWatchView(DetailView):
                 u.watch_list.add(c)
             elif action == 'remove':
                 u.watch_list.remove(c)
-            return JsonResponse({'status': 'success', 'message': 'Successfully added to watchlist!'})
-        return JsonResponse({'status': 'error', 'message': 'You must be logged in to perform this action.'})
+            return JsonResponse({'status': 'success', 'message': 'Successfully added to watchlist!'
+                                 })
+        return JsonResponse({'status': 'error', 'message': 'You must be logged in to perform this \
+                             action.'})
 
 
-class ImportCattleView(View):
+class ImportCattleView(SuperUserRequiredMixin, View):
     template_name = 'cattle/import-cattle.html'
     success_url = 'success'
 
