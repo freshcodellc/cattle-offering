@@ -1,9 +1,9 @@
 {% extends 'base.html' %}
-{% block title %}Offering{% endblock %}
+{% block title %}Watch List{% endblock %}
 
 {% block content %}
   <div class="main-content main-content--white">
-    <h1 class="main-content__title">Offering</h1>
+    <h1 class="main-content__title">Watch List</h1>
     {% for cattle in object_list %}
     <div class="offering-content-listing clear">
       <div class="offering-content-listing__column">
@@ -23,7 +23,7 @@
       </div>
     </div>
     {% empty %}
-      <p class="offering-content__message">No cattle currently in the system.</p>
+      <p class="offering-content__message">No cattle currently in your watch list.</p>
     {% endfor %}
   </div>
 {% endblock %}

@@ -13,55 +13,55 @@
       {% for field in form.errors %}
       {% endfor %}
     {% endif %}
-    <form class="form-signup" method="post" action="">
+    <form class="form-profile" method="post" action="">
       {% csrf_token %}
       {{ form.name.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__label" for="id_name">Name:</label>
-        {{ form.name|addclass:'signup__first-name' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__label" for="id_name">Name:</label>
+        {{ form.name|addclass:'profile__first-name' }}
       </div>
       {{ form.email.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__label" for="id_email">Email address:</label>
-        {{ form.email|addclass:'signup__email' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__label" for="id_email">Email address:</label>
+        {{ form.email|addclass:'profile__email' }}
       </div>
       {{ form.phone.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_phone">Phone:</label>
-        {{ form.phone|addclass:'signup__phone' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_phone">Phone:</label>
+        {{ form.phone|addclass:'profile__phone' }}
       </div>
       {{ form.address.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_address">Address:</label>
-        {{ form.address|addclass:'signup__address' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_address">Address:</label>
+        {{ form.address|addclass:'profile__address' }}
       </div>
       {{ form.address2.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_address2">Address 2</label>
-        {{ form.address2|addclass:'signup__address2' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_address2">Address 2</label>
+        {{ form.address2|addclass:'profile__address2' }}
       </div>
       {{ form.city.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_city">City:</label>
-        {{ form.city|addclass:'signup__city' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_city">City:</label>
+        {{ form.city|addclass:'profile__city' }}
       </div>
       {{ form.state.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_state">State:</label>
-        {{ form.state|addclass:'signup__state' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_state">State:</label>
+        {{ form.state|addclass:'profile__state' }}
       </div>
       {{ form.zip.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_zip">Zip:</label>
-        {{ form.zip|addclass:'signup__zip' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_zip">Zip:</label>
+        {{ form.zip|addclass:'profile__zip' }}
       </div>
       {{ form.newsletter.errors }}
-      <div class="form-signup__wrapper">
-        <label class="form-signup__last" for="id_newsletter">Keep me updated via email!</label>
-        {{ form.newsletter|addclass:'signup__newsletter' }}
+      <div class="form-profile__wrapper">
+        <label class="form-profile__last" for="id_newsletter">Keep me updated via email!</label>
+        {{ form.newsletter|addclass:'profile__newsletter' }}
       </div>
-      <div class="form-signup__wrapper">
-        <button class="button__signup" type="submit" value="">Save</button>
+      <div class="form-profile__wrapper">
+        <button class="button__profile" type="submit" value="">Save</button>
       </div>
     </form>
   </div>

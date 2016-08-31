@@ -22,6 +22,9 @@
         {% else %}
           <a class="action-menu__link" href="{% url 'watchlist' %}">Watch List</a>
           <a class="action-menu__link" href="{% url 'edit-profile' request.user.id %}">Profile</a>
+          {% if request.user.is_superuser %}
+            <a class="action-menu__link" href="{% url 'cattle:import-cattle' %}">Import</a>
+          {% endif %}
           <a class="action-menu__link" href="{% url 'logout' %}">Log Out</a>
         {% endif %}
       </nav>
