@@ -757,6 +757,30 @@ header {
   }
 }
 
+.filter-form {
+
+  &__title {
+    padding: 5px 0px 5px 0px;
+  }
+
+  &__row {
+    width: 100%;
+    display: block;
+
+    & select {
+      width: 75%;
+      display: block;
+    }
+  }
+
+  &__label {
+    @extend .filter-form__row;
+    height: 25px;
+    line-height: 25px;
+    font-size: 13px;
+  }
+}
+
 .offering-detail {
 
   &__heading {

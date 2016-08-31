@@ -37,10 +37,10 @@
 
   <div class="offering-search">
     <h3 class="offering-search__title">Find Cattle</h3>
-    <form action="" method="get">
+    <form class="filter-form" action="" method="get">
       {{ form.non_field_errors }}
       {{ form.name.errors }}
-      <h4>Production</h4>
+      <h4 class="filter-form__title">Production</h4>
       <hr/>
       <div class="filter-form__row">
         <label class="filter-form__label" for="{{ filter.form.scrotal_circumference.id_for_label }}">Scrotal Circumference:</label>
@@ -62,7 +62,7 @@
         <label class="filter-form__label" for="{{ filter.form.residual_average_daily_gain.id_for_label }}">Residual Average Daily Gain:</label>
         {{ filter.form.residual_average_daily_gain }}
       </div>
-      <h4>Maternal</h4>
+      <h4 class="filter-form__title">Maternal</h4>
       <hr/>
       <div class="filter-form__row">
         <label class="filter-form__label" for="{{ filter.form.heifer_pregnancy.id_for_label }}">Heifer Pregnancy:</label>
@@ -88,7 +88,7 @@
         <label class="filter-form__label" for="{{ filter.form.cow_energy_value.id_for_label }}">Cow Energy Value:</label>
         {{ filter.form.cow_energy_value }}
       </div>
-      <h4>Carcass</h4>
+      <h4 class="filter-form__title">Carcass</h4>
       <hr/>
       <div class="filter-form__row">
         <label class="filter-form__label" for="{{ filter.form.carcass_weight.id_for_label }}">Carcass Weight:</label>
