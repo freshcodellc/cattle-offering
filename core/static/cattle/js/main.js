@@ -11,8 +11,10 @@
       var self = $(this);
       $.get( url, {} )
         .done(function(data) {
+          console.log(self);
+          console.log(self.siblings('.js-watchlist-remove'));
           self.hide();
-          self.siblings('.js-watchlist-remove').show();
+          self.siblings('.js-watchlist-remove').removeClass('is-hidden').show();
         });
     })
 
@@ -22,7 +24,7 @@
       $.get( url, {} )
         .done(function(data) {
           self.hide();
-          self.siblings('.js-watchlist-add').show();
+          self.siblings('.js-watchlist-add').removeClass('is-hidden').show();
           if (self.data('remove')) {
             self.closest('.offering-content-listing').remove();
           }
