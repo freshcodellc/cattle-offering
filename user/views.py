@@ -22,7 +22,7 @@ class RegistrationView(CreateView):
             user.add_email_to_mailing_list()
         user = authenticate(username=user.email, password=form.cleaned_data['password'])
         login(self.request, user)
-        return super().form_valid(form)
+        return super(RegistrationView, self).form_valid(form)
 
 
 class EditProfileView(UpdateView):
