@@ -1,12 +1,32 @@
 [
 {
+  "model": "cattle.photo",
+  "pk": 36,
+  "fields": {
+    "title": "Fourth",
+    "caption": "Fourth image",
+    "original_image": "cattle_images/cow.jpeg",
+    "cattle": 2
+  }
+},
+{
+  "model": "cattle.photo",
+  "pk": 37,
+  "fields": {
+    "title": "Cow Image",
+    "caption": "",
+    "original_image": "cattle_images/cow_fijegob.jpeg",
+    "cattle": 1
+  }
+},
+{
   "model": "cattle.cattle",
   "pk": 1,
   "fields": {
-    "producer": 1,
+    "producer": 2,
     "lot_number": 1234,
     "breed": "angus",
-    "sex": "f",
+    "sex": "female",
     "female_type": "cow",
     "registration_number": "12345",
     "bull_name": "Test Angus Female",
@@ -26,17 +46,20 @@
     "carcass_weight": 1,
     "marbling": "0.06",
     "ribeye_area": "-0.08",
-    "fat_thickness": "0.034"
+    "fat_thickness": "0.034",
+    "video_url": "https://www.youtube.com/watch?v=RBvHrG87Jiw",
+    "updated": "2016-08-22T04:42:52.010Z",
+    "created": "2016-08-19T06:00:00Z"
   }
 },
 {
   "model": "cattle.cattle",
   "pk": 2,
   "fields": {
-    "producer": 1,
+    "producer": 2,
     "lot_number": 123456,
     "breed": "charolais",
-    "sex": "b",
+    "sex": "bull",
     "female_type": null,
     "registration_number": "121212",
     "bull_name": "Test Charolais Bull",
@@ -56,7 +79,10 @@
     "carcass_weight": 2,
     "marbling": "0.05",
     "ribeye_area": "0.11",
-    "fat_thickness": "0.113"
+    "fat_thickness": "0.113",
+    "video_url": null,
+    "updated": "2016-08-19T06:00:00Z",
+    "created": "2016-08-19T06:00:00Z"
   }
 }
 ]
