@@ -69,7 +69,8 @@ def get_attr_query_map(attr_percentiles, attr_name):
 def get_filter_function(percentile_queries):
     def filter_attr(queryset, value):
         query = percentile_queries.get(value, {})
-        return queryset.filter(**query)
+        # TODO: Prefetch watchlist for user
+        return queryset.filter(**query).select_related('producer').prefetch_related('photos')
     return filter_attr
 
 PERCENTILE_CHOICES = [('', '-')] + [(percent, '{}%'.format(percent)) for percent in PERCENTILES]
