@@ -103,4 +103,5 @@ class Cattle(models.Model):
         return self.bull_name
 
     class Meta:
+        unique_together = ('producer', 'bull_name')
         verbose_name_plural = 'cattle'
