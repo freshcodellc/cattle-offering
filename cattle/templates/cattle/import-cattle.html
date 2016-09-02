@@ -2,28 +2,29 @@
 {% block title %}Cattle Importer{% endblock %}
 {% load addclass %}
 {% block content %}
-  <div class="main-content main-content--white">
+  <div class="main-content main-content--white clear">
     <h1 class="main-content__title">Cattle Importer</h1>
 
       {{ form_with_error.non_field_errors }}
       {% for field in form_with_error %}
         {% if field.errors %}
-        <ul class="errorlist">
+        <div class="cattle-import__error">
           {% for error in field.errors %}
-            <li>
-            {{ field.label }}: {{ error }}
-            </li>
+            <p>{{ field.label }}: {{ error }}</p>
           {% endfor %}
-        </ul>
+        </div>
         {% endif %}
       {% endfor %}
 
-      <form class="cattle-import-form" method="POST" enctype="multipart/form-data">
-        {% csrf_token %}
-        {{ form.cattle_xlsx.errors }}
-        <label class="cattle-import-form__label" for="{{ form.cattle_xlsx.id_for_label }}">Cattle Excel Spreadshet (.xlsx):</label>
-        {{ form.cattle_xlsx|addclass:'cattle-import__excel-button' }}
-        <input class="button__import" type="submit" name="Submit">
+      <form class="cattle-import" method="POST" enctype="multipart/form-data">
+        <div class="cattle-import__wrapper">
+          {% csrf_token %}
+          {{ form.cattle_xlsx.errors }}
+          <label class="cattle-import__label" for="{{ form.cattle_xlsx.id_for_label }}">Cattle Excel Spreadshet (.xlsx):</label>
+          {{ form.cattle_xlsx|addclass:'cattle-import__excel-button' }}
+          <input class="button__import" type="submit" name="Submit">
+        </div>
       </form>
+
   </div>
 {% endblock %}

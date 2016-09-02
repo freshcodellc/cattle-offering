@@ -6,7 +6,7 @@
     <h1 class="main-content__title">Profile</h1>
     {% if messages %}
       {% for message in messages %}
-        <p{% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</p>
+        <p{% if message.tags %} class="form-profile__saved"{% endif %}>{{ message }}</p>
       {% endfor %}
     {% endif %}
     {% if form.errors %}

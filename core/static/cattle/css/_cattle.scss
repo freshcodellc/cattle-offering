@@ -826,6 +826,31 @@ header {
 
 .offering-detail {
 
+  &__column1 {
+    width: 52%;
+    float: left;
+    padding-right: 8px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__column2 {
+    width: 48%;
+    float: left;
+    padding-left: 15px;
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__image {
+    @extend .offering-content-listing__image;
+    margin-top: 10px;
+  }
+
+  &__video {
+    margin-top: 20px;
+  }
+
   &__heading {
     display: block;
     font-size: 18px;
@@ -844,13 +869,12 @@ header {
     display: block;
     height: 35px;
     line-height: 35px;
-    margin-left: 6px;
   }
 
   &__label {
     float: left;
     font-size: 13px;
-    width: 30%;
+    width: 55%;
   }
 
   &__item {
@@ -863,6 +887,18 @@ header {
 
 .form-profile {
   margin-top: 10px;
+
+  &__saved {
+    margin-top: 5px;
+    background-color: $green;
+    height: 25px;
+    line-height: 25px;
+    color: $white;
+    text-align: center;
+    font-size: 14px;
+    width: 55%;
+    border-radius: 2px;
+  }
 
   &__wrapper {
     width: 100%;
@@ -896,20 +932,39 @@ header {
 
 /*----->> Import <<-----*/
 
-.cattle-import-form {
+.cattle-import {
   margin-top: 20px;
   height: 35px;
   line-height: 35px;
   width: 80%;
 
+  &__error {
+    height: 20px;
+    line-height: 20px;
+    margin-right: 40%;
+  }
+
+  &__wrapper {
+    height: 35px;
+    line-height: 35px;
+    width: 100%;
+  }
+
   &__label {
     height: 25px;
     line-height: 25px;
-    width: 30%;
+    width: 35%;
   }
 
-  & input input {
-    @extend .button__import;
+  &__button-row {
+    height: 35px;
+    line-height: 35px;
+    width: 80%;
+  }
+
+  &__excel-button {
+    width: 45%;
+    margin-left: 5%;
   }
 }
 
