@@ -4,7 +4,7 @@
 {% load embed_video_tags %}
 
 {% block content %}
-  <div class="main-content main-content--white clear">
+  <div class="main-content main-content--white clear flex wrap">
     <h1 class="main-content__title">{{ object.bull_name }}</h1>
     <div class="offering-detail__container">
       <div class="offering-detail__column1">
@@ -19,7 +19,7 @@
         <span class="offering-detail__heading">Detailed Description:</span>
         <div class="offering-detail__row">
           <strong class="offering-detail__label">Producer:</strong>
-          <span class="offering-detail__item">{{ object.producer.email }}</span>
+          <span class="offering-detail__item">{{ object.producer.name }}</span>
         </div>
         <div class="offering-detail__row">
           <strong class="offering-detail__label">Lot #:</strong>
@@ -27,11 +27,11 @@
         </div>
         <div class="offering-detail__row">
           <strong class="offering-detail__label">Breed:</strong>
-          <span class="offering-detail__item">{{ object.breed }}</span>
+          <span class="offering-detail__item">{{ object.get_breed_display }}</span>
         </div>
         <div class="offering-detail__row">
           <strong class="offering-detail__label">Sex:</strong>
-          <span class="offering-detail__item">{{ object.sex }}</span>
+          <span class="offering-detail__item">{{ object.get_sex_display }}</span>
         </div>
         <div class="offering-detail__row">
           <strong class="offering-detail__label">Female Type:</strong>

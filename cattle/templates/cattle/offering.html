@@ -16,8 +16,8 @@
         <span class="offering-content-listing__item"><strong>Lot #:</strong> {{ cattle.lot_number }}</span>
         <span class="offering-content-listing__item"><strong>Bull Name:</strong> {{ cattle.bull_name }}</span>
         <span class="offering-content-listing__item"><strong>Producer:</strong> {{ cattle.producer.name }}</span>
-        <span class="offering-content-listing__item"><strong>Breed:</strong> {{ cattle.breed }}</span>
-        <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.sex }}</span>
+        <span class="offering-content-listing__item"><strong>Breed:</strong> {{ cattle.get_breed_display }}</span>
+        <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.get_sex_display }}</span>
         <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span>
         {% if request.user and not request.user.is_anonymous %}
           {% if cattle in request.user.watch_list.all %}

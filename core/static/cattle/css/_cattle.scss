@@ -223,6 +223,10 @@ header {
     &:nth-last-child(1) {
       border-right: none;
     }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 }
 
@@ -863,6 +867,10 @@ header {
     padding-right: 8px;
     display: flex;
     flex-direction: column;
+
+    @include mobile-lg {
+      width: 100%;
+    }
   }
 
   &__column2 {
@@ -871,15 +879,32 @@ header {
     padding-left: 15px;
     display: flex;
     flex-direction: column;
+
+    @include mobile-lg {
+      width: 100%;
+    }
   }
 
   &__image {
     @extend .offering-content-listing__image;
     margin-top: 10px;
+
+    @include mobile-lg {
+      order: 1;
+    }
   }
 
   &__video {
     margin-top: 20px;
+
+    & iframe {
+      width: 100%;
+      height: 270px;
+    }
+
+    @include mobile-lg {
+      order: 3;
+    }
   }
 
   &__heading {
@@ -891,7 +916,6 @@ header {
 
   &__row {
     display: block;
-    height: 25px;
     line-height: 25px;
     width: 100%;
   }
