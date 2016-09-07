@@ -21,14 +21,20 @@
         <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span>
         {% if request.user and not request.user.is_anonymous %}
           {% if cattle in request.user.watch_list.all %}
+          <div class="button-row">
             <span class="button__watchlist button__watchlist--remove js-watchlist-remove" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
             <span class="button__watchlist js-watchlist-add is-hidden" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'add' %}">+ Watch List</span>
+          </div>
           {% else %}
-            <span class="button__watchlist js-watchlist-add" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'add' %}">+ Watch List</span>
+          <div class="button-row">
             <span class="button__watchlist button__watchlist--remove js-watchlist-remove is-hidden" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
+            <span class="button__watchlist js-watchlist-add" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'add' %}">+ Watch List</span>
+          </div>
           {% endif %}
         {% endif %}
-        <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
+        <div class="button-row">
+          <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
+        </div>
       </div>
     </div>
     {% empty %}

@@ -18,8 +18,12 @@
         <span class="offering-content-listing__item"><strong>Breed:</strong> {{ cattle.get_breed_display }}</span>
         <span class="offering-content-listing__item"><strong>Sex:</strong> {{ cattle.get_sex_display }}</span>
         <span class="offering-content-listing__item"><strong>Registration #:</strong> {{ cattle.registration_number }}</span>
-        <span class="button__watchlist button__watchlist--remove js-watchlist-remove" data-remove="true" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</span>
-        <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
+        <div class="button-row clear">
+          <a class="button__watchlist button__watchlist--remove js-watchlist-remove" data-remove="true" data-href="{% url 'cattle:offering-toggle-watch' cattle.id 'remove' %}">- Stop Watching</a>
+        </div>
+        <div class="button-row clear">
+          <a class="button__more" href="{% url 'cattle:offering-detail' cattle.id %}">Read More</a>
+        </div>
       </div>
     </div>
     {% empty %}
