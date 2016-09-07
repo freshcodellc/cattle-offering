@@ -134,7 +134,7 @@ class CattleFilter(FilterSet):
                                                action=get_filter_function(RADG_QUERY_MAP))
     heifer_pregnancy = ChoiceFilter(choices=PERCENTILE_CHOICES,
                                     action=get_filter_function(HEIFER_PREGNANCY_QUERY_MAP))
-    cow_energy_value = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    calving_ease_maternal = ChoiceFilter(choices=PERCENTILE_CHOICES,
                                     action=get_filter_function(CEM_QUERY_MAP))
     maternal_milk = ChoiceFilter(choices=PERCENTILE_CHOICES,
                                  action=get_filter_function(MATERNAL_MILK_QUERY_MAP))

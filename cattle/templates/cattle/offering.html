@@ -2,6 +2,7 @@
 {% block title %}Offering{% endblock %}
 
 {% block content %}
+<div class="flex-wrap">
   <div class="offering-content clear">
     <h1 class="main-content__title">All Offers</h1>
     {% for cattle in object_list %}
@@ -109,4 +110,5 @@
       <input class="button__filter-form" type="submit" />
     </form>
   </div>
+</div>
 {% endblock %}

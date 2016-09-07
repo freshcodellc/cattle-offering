@@ -1,5 +1,5 @@
 @mixin mobile {
-  @media screen and (max-width: #{$tablet-width - 1px}) {
+  @media screen and (max-width: #{$mobile-width - 1px}) {
     @content;
   }
 }

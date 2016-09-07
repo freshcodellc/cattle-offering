@@ -35,6 +35,19 @@ header {
   display: none !important;
 }
 
+.flex-wrap {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -moz-flex;
+  display: -webkit-flex;
+  display: flex;
+
+  @include tablet {
+    flex-direction: column;
+  }
+}
+
 /*----->> Buttons <<-----*/
 
 .button {
@@ -222,6 +235,7 @@ header {
 
   &__logo {
     margin: 8px 0 0 25px;
+    max-width: 65%;
   }
 }
 
@@ -244,7 +258,7 @@ header {
   }
 
   &.open {
-    height: 205px;
+    height: 153px;
     background-color: $black;
     transition: height 1s;
   }
@@ -274,7 +288,7 @@ header {
   @include tablet {
     display: block;
     float: right;
-    line-height: 65px;
+    height: 65px;
   }
 
   &__svg {
@@ -750,6 +764,12 @@ header {
   width: 72%;
   border-radius: 4px;
   float: left;
+  order: 1;
+
+  @include tablet {
+    width: 100%;
+    order: 2;
+  }
 
   &__message {
     margin-top: 20px;
@@ -766,11 +786,14 @@ header {
     padding: 0px 5px 0px 5px;
     display: flex;
     flex-direction: column;
+
+    @include mobile {
+      width: 100%;
+    }
   }
 
   &__item {
     text-decoration: none;
-    height: 25px;
     line-height: 25px;
     display: block;
   }
@@ -787,6 +810,14 @@ header {
   width: 27%;
   border-radius: 4px;
   float: right;
+  margin-left: 1%;
+  order: 2;
+
+  @include tablet {
+    width: 100%;
+    order: 1;
+    margin-left: 0;
+  }
 
   &__title {
     height: 30px;
@@ -818,7 +849,7 @@ header {
 
   &__label {
     @extend .filter-form__row;
-    height: 25px;
+    min-height: 25px;
     line-height: 25px;
     font-size: 13px;
   }
@@ -997,6 +1028,12 @@ header {
   max-width: 980px;
   text-align: center;
 
+  @include mobile {
+    height: auto;
+    line-height: normal;
+    padding-top: 10px;
+  }
+
   &__link {
     text-decoration: none;
     border-right: 2px solid $white;
@@ -1012,6 +1049,12 @@ header {
     &:nth-last-child(1) {
       border-right: none;
       padding-right: 0px;
+    }
+
+    @include mobile {
+      width: 100%;
+      display: block;
+      padding-top: 5px;
     }
   }
 }
