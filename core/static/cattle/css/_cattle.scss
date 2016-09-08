@@ -97,9 +97,7 @@ header {
 
   &__confirm {
     @extend .button;
-    height: 25px;
-    width: 42%;
-    margin-top: 5px;
+    padding: 5px 10px 5px 10px;
 
     &:hover {
       background-color: $light-tan;
@@ -118,8 +116,8 @@ header {
 
   &__change {
     @extend .button;
-    height: 25px;
-    width: 185px;
+    padding: 5px 10px 5px 10px;
+
 
     &:hover {
       background-color: $light-tan;
@@ -190,10 +188,13 @@ header {
 
   &__import {
     @extend .button;
-    height: 25px;
-    line-height: 25px;
-    width: 15%;
+    padding: 5px 10px 5px 10px;
     margin-top: 5px;
+
+    @include tablet {
+      float: left;
+      margin-top: 15px;
+    }
 
     &:hover {
       background-color: $light-tan;
@@ -764,29 +765,53 @@ header {
 .form-password-reset-confirm {
 
   &__wrapper {
-    height: 35px;
-    line-height: 35px;
     margin-bottom: 10px;
 
     &:nth-last-child(1) {
-      width: 45%;
+      width: 60%;
+
+      @include tablet-sm {
+        width: 65%;
+      }
+
+      @include mobile-lg {
+        width: 75%;
+      }
+
+      @include mobile {
+        width: 85%;
+      }
     }
   }
 
   &__label {
-    width: 20%;
-    height: 35px;
-    line-height: 35px;
+    width: 30%;
     float: left;
+
+    @include mobile-lg {
+      font-size: 11px;
+    }
   }
 
   & input {
-    width: 25%;
+    width: 30%;
     height: 25px;
     line-height: 25px;
     margin-bottom: 10px;
     border: 1px solid $gray;
     border-radius: 2px;
+
+    @include tablet-sm {
+      width: 35%;
+    }
+
+    @include mobile-lg {
+      width: 45%;
+    }
+
+    @include mobile {
+      width: 55%;
+    }
   }
 }
 
@@ -811,36 +836,53 @@ header {
   padding-top: 20px;
 
   &__errornote {
-    height: 35px;
-    line-height: 35px;
     margin-bottom: 10px;
     color: red;
   }
 
   &__instructions {
-    height: 35px;
     display: block;
     margin-bottom: 20px;
   }
 
   &__row {
-    height: 35px;
-    line-height: 35px;
     margin-bottom: 10px;
 
     & label {
-      @extend .form-password-change__row;
       width: 30%;
       float: left;
+
+      @include tablet {
+        font-size: 12px;
+      }
+
+      @include mobile {
+        font-size: 11px;
+      }
     }
 
     & input {
       height: 25px;
       line-height: 25px;
       width: 25%;
-      margin-bottom: 10px;
       border: 1px solid $gray;
       border-radius: 2px;
+
+      @include tablet {
+        width: 40%;
+      }
+
+      @include tablet-sm {
+        width: 45%;
+      }
+
+      @include mobile-lg {
+        width: 50%;
+      }
+
+      @include mobile {
+        width: 60%;
+      }
     }
   }
 
@@ -854,6 +896,22 @@ header {
     @extend .form-password-change__row;
     width: 55%;
     padding-top: 7px;
+
+    @include tablet {
+      width: 70%;
+    }
+
+    @include tablet-sm {
+      width: 75%;
+    }
+
+    @include mobile-lg {
+      width: 80%;
+    }
+
+    @include mobile {
+      width: 90%;
+    }
   }
 }
 
@@ -1158,8 +1216,6 @@ header {
   }
 
   &__wrapper {
-    height: 35px;
-    line-height: 35px;
     width: 100%;
   }
 
@@ -1167,17 +1223,32 @@ header {
     height: 25px;
     line-height: 25px;
     width: 35%;
+
+    @include tablet {
+      width: 100%;
+    }
+
+    @include mobile {
+      font-size: 12px;
+    }
   }
 
   &__button-row {
-    height: 35px;
-    line-height: 35px;
     width: 80%;
+
+    @include tablet {
+      width: 100%;
+    }
   }
 
   &__excel-button {
-    width: 45%;
+    width: 35%;
     margin-left: 5%;
+
+    @include tablet {
+      width: 100%;
+      margin-left: 0;
+    }
   }
 }
 
