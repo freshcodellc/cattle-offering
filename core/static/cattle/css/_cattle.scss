@@ -165,6 +165,7 @@ header {
     float: left;
     text-decoration: none;
     display: block;
+    margin-top: 10px;
 
     &:hover {
       background-color: $light-tan;
@@ -1083,8 +1084,7 @@ header {
 
   &__button-row {
     display: block;
-    height: 35px;
-    line-height: 35px;
+    margin-top: 10px;
   }
 
   &__label {
