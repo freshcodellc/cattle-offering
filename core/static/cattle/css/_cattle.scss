@@ -67,8 +67,8 @@ header {
 
   &__contact {
     @extend .button;
-    height: 35px;
-    width: 70px;
+    padding: 5px 10px 5px 10px;
+    -webkit-appearance: none;
 
     &:hover {
       background-color: $light-tan;
@@ -107,6 +107,7 @@ header {
 
   &__login {
     @extend .button__contact;
+    -webkit-appearance: none;
 
     &:hover {
       background-color: $light-tan;
@@ -600,6 +601,7 @@ header {
 
   &__wrapper {
     line-height: 35px;
+    -webkit-appearance: none;
 
     &:nth-last-child(1) {
       width: 65%;
