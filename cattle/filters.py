@@ -73,6 +73,7 @@ def get_filter_function(percentile_queries):
         return queryset.filter(**query).select_related('producer').prefetch_related('photos')
     return filter_attr
 
+
 def get_choices(field):
     return [('', '-')] + [(first, '{0}% ({1})'.format(first, second)) for first, second
                                            in zip(PERCENTILES, ANGUS_PERCENTILES[field])]
