@@ -73,7 +73,9 @@ def get_filter_function(percentile_queries):
         return queryset.filter(**query).select_related('producer').prefetch_related('photos')
     return filter_attr
 
-PERCENTILE_CHOICES = [('', '-')] + [(percent, '{}%'.format(percent)) for percent in PERCENTILES]
+def get_choices(field):
+    return [('', '-')] + [(first, '{0}% ({1})'.format(first, second)) for first, second
+                                           in zip(PERCENTILES, ANGUS_PERCENTILES[field])]
 
 SC_PERCENTILE_QUERY_MAP = get_attr_query_map(ANGUS_PERCENTILES['scrotal_circumference'],
                                              'scrotal_circumference')
@@ -122,35 +124,35 @@ FAT_THICKNESS_QUERY_MAP = get_attr_query_map(ANGUS_PERCENTILES['fat_thickness'],
 
 
 class CattleFilter(FilterSet):
-    scrotal_circumference = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    scrotal_circumference = ChoiceFilter(choices=get_choices('scrotal_circumference'),
                                          action=get_filter_function(SC_PERCENTILE_QUERY_MAP))
-    birth_weight = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    birth_weight = ChoiceFilter(choices=get_choices('birth_weight'),
                                 action=get_filter_function(BIRTH_WEIGHT_QUERY_MAP))
-    weaning_weight = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    weaning_weight = ChoiceFilter(choices=get_choices('weaning_weight'),
                                   action=get_filter_function(WEANING_WEIGHT_QUERY_MAP))
-    yearling_weight = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    yearling_weight = ChoiceFilter(choices=get_choices('yearling_weight'),
                                    action=get_filter_function(YEARLING_WEIGHT_QUERY_MAP))
-    residual_average_daily_gain = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    residual_average_daily_gain = ChoiceFilter(choices=get_choices('residual_average_daily_gain'),
                                                action=get_filter_function(RADG_QUERY_MAP))
-    heifer_pregnancy = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    heifer_pregnancy = ChoiceFilter(choices=get_choices('heifer_pregnancy'),
                                     action=get_filter_function(HEIFER_PREGNANCY_QUERY_MAP))
-    calving_ease_maternal = ChoiceFilter(choices=PERCENTILE_CHOICES,
-                                    action=get_filter_function(CEM_QUERY_MAP))
-    maternal_milk = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    calving_ease_maternal = ChoiceFilter(choices=get_choices('calving_ease_maternal'),
+                                         action=get_filter_function(CEM_QUERY_MAP))
+    maternal_milk = ChoiceFilter(choices=get_choices('maternal_milk'),
                                  action=get_filter_function(MATERNAL_MILK_QUERY_MAP))
-    mature_weight = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    mature_weight = ChoiceFilter(choices=get_choices('mature_weight'),
                                  action=get_filter_function(MATURE_WEIGHT_QUERY_MAP))
-    mature_height = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    mature_height = ChoiceFilter(choices=get_choices('mature_height'),
                                  action=get_filter_function(MATURE_HEIGHT_QUERY_MAP))
-    cow_energy_value = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    cow_energy_value = ChoiceFilter(choices=get_choices('cow_energy_value'),
                                     action=get_filter_function(COW_ENERGY_VALUE_QUERY_MAP))
-    carcass_weight = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    carcass_weight = ChoiceFilter(choices=get_choices('carcass_weight'),
                                   action=get_filter_function(CARCASS_WEIGHT_QUERY_MAP))
-    marbling = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    marbling = ChoiceFilter(choices=get_choices('marbling'),
                             action=get_filter_function(MARBLING_QUERY_MAP))
-    ribeye_area = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    ribeye_area = ChoiceFilter(choices=get_choices('ribeye_area'),
                                action=get_filter_function(RIBEYE_AREA_QUERY_MAP))
-    fat_thickness = ChoiceFilter(choices=PERCENTILE_CHOICES,
+    fat_thickness = ChoiceFilter(choices=get_choices('fat_thickness'),
                                  action=get_filter_function(FAT_THICKNESS_QUERY_MAP))
 
     class Meta:
